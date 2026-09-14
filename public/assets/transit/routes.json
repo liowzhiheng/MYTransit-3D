@@ -1,0 +1,92 @@
+[
+  {
+    "id": "AG",
+    "name": "LRT Ampang Line",
+    "shortName": "AG",
+    "mode": "LRT",
+    "color": "#e57200",
+    "textColor": "#ffffff",
+    "description": "Ampang ~ Sentul Timur"
+  },
+  {
+    "id": "KJ",
+    "name": "LRT Kelana Jaya Line",
+    "shortName": "KJ",
+    "mode": "LRT",
+    "color": "#e31837",
+    "textColor": "#ffffff",
+    "description": "Gombak ~ Putra Heights"
+  },
+  {
+    "id": "PH",
+    "name": "LRT Sri Petaling Line",
+    "shortName": "SP",
+    "mode": "LRT",
+    "color": "#76232f",
+    "textColor": "#ffffff",
+    "description": "Putra Height ~ Sentul Timur"
+  },
+  {
+    "id": "KGL",
+    "name": "MRT Kajang Line",
+    "shortName": "KG",
+    "mode": "MRT",
+    "color": "#008751",
+    "textColor": "#ffffff",
+    "description": "Kwasa Damansara ~ Kajang"
+  },
+  {
+    "id": "PYL",
+    "name": "MRT Putrajaya Line",
+    "shortName": "PY",
+    "mode": "MRT",
+    "color": "#ffcd00",
+    "textColor": "#000000",
+    "description": "Putrajaya ~ Kwasa Damansara"
+  },
+  {
+    "id": "MR",
+    "name": "KL Monorail Line",
+    "shortName": "MR",
+    "mode": "MONORAIL",
+    "color": "#84bd00",
+    "textColor": "#ffffff",
+    "description": "Titiwangsa ~ KL Sentral"
+  },
+  {
+    "id": "BRT",
+    "name": "BRT Sunway Line",
+    "shortName": "BRT",
+    "mode": "BUS",
+    "color": "#115740",
+    "textColor": "#ffffff",
+    "description": "Sunway-Setia Jaya ~ USJ 7"
+  },
+  {
+    "id": "SA",
+    "name": "LRT Shah Alam Line",
+    "shortName": "SAL",
+    "mode": "LRT",
+    "color": "#00A9E0",
+    "textColor": "#FFFFFF",
+    "description": "Bandar Utama ~ Johan Setia"
+  },
+  {
+    "id": "KC05_KB18",
+    "name": "KTM Batu Caves - Pulau Sebang",
+    "shortName": "KC",
+    "mode": "KTM",
+    "color": "#004b87",
+    "textColor": "#ffffff",
+    "description": "KTM Komuter Klang Valley Sector"
+  },
+  {
+    "id": "KA15_KD19",
+    "name": "KTM Tg Malim - Port Klang",
+    "shortName": "TP",
+    "mode": "KTM",
+    "color": "#c2185b",
+    "textColor": "#ffffff",
+    "description": "KTM Komuter Klang Valley Sector"
+  }
+]

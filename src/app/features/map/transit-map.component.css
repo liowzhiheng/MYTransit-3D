@@ -1,0 +1,170 @@
+.map-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-space);
+}
+
+.map-canvas-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Loading Overlay */
+.map-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 8, 14, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.cyber-spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 242, 254, 0.15);
+  border-top-color: var(--cyan-primary);
+  border-right-color: var(--cyan-primary);
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 16px var(--cyan-glow);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cyan-primary);
+  letter-spacing: 0.1em;
+}
+
+.loader-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Error Banner */
+.map-error-banner {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  backdrop-filter: blur(8px);
+  color: #fecdd3;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  z-index: 12;
+}
+
+.error-badge {
+  background: var(--rose-alert);
+  color: white;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* HUD Overlay Controls */
+.map-hud-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+  background: rgba(9, 15, 27, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-panel);
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hud-btn {
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.hud-btn:hover {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: rgba(0, 242, 254, 0.35);
+  color: var(--cyan-primary);
+}
+
+.hud-btn.active {
+  background: rgba(0, 242, 254, 0.2);
+  border-color: var(--cyan-primary);
+  color: var(--cyan-primary);
+  box-shadow: 0 0 10px var(--cyan-glow);
+}
+
+.hud-icon {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hud-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 2px 4px;
+}
+
+/* Tooltips */
+.hud-tooltip {
+  display: none;
+  position: absolute;
+  right: calc(100% + 10px);
+  background: rgba(6, 10, 18, 0.9);
+  border: 1px solid var(--border-panel);
+  color: var(--text-white);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hud-btn:hover .hud-tooltip {
+  display: block;
+}

@@ -1,0 +1,102 @@
+.ops-footer {
+  height: var(--footer-height);
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border-top: var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: relative;
+  z-index: 20;
+}
+
+.footer-stats-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-k {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.stat-v {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.stat-unit {
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+.stat-separator {
+  width: 1px;
+  height: 14px;
+  background: var(--border-subtle);
+}
+
+.footer-telemetry-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.telemetry-readout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(8, 14, 26, 0.6);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+}
+
+.geo-tag {
+  color: var(--cyan-primary);
+  font-weight: 700;
+}
+
+.telemetry-sep {
+  color: var(--border-subtle);
+}
+
+.mode-badge-footer {
+  padding: 1px 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 700;
+  font-size: 9px;
+}
+
+.mode-badge-footer.mode-3d {
+  background: rgba(0, 242, 254, 0.2);
+  color: var(--cyan-primary);
+}
+
+.attribution-link {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+@media (max-width: 1000px) {
+  .stat-cell:nth-child(n+5) {
+    display: none;
+  }
+  .telemetry-readout {
+    display: none;
+  }
+}

@@ -1,0 +1,354 @@
+.network-sidebar {
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  background: var(--bg-panel);
+  backdrop-filter: var(--glass-blur);
+  border-right: var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  z-index: 15;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  padding: 16px;
+  gap: 16px;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+}
+
+.network-sidebar.panel-collapsed {
+  transform: translateX(-105%);
+}
+
+.panel-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-tag {
+  font-size: 10px;
+  color: var(--cyan-primary);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: -0.01em;
+}
+
+/* Search Box */
+.search-container {
+  width: 100%;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(8, 14, 26, 0.7);
+  border: 1px solid var(--border-panel);
+  border-radius: 6px;
+  padding: 0 10px;
+  transition: all 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  margin-right: 8px;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-white);
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-shortcut {
+  font-size: 10px;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Filter Section */
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.mode-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mode-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 23, 38, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-chip:hover {
+  background: rgba(22, 35, 58, 0.8);
+  color: var(--text-white);
+  border-color: var(--border-panel);
+}
+
+.mode-chip.active {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: var(--cyan-primary);
+  color: var(--cyan-primary);
+  box-shadow: 0 0 8px var(--cyan-glow);
+}
+
+.chip-count {
+  font-size: 9px;
+  opacity: 0.7;
+}
+
+/* Hubs Grid */
+.quick-hubs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hubs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.hub-btn {
+  background: rgba(12, 20, 34, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 6px 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hub-btn:hover {
+  background: rgba(20, 34, 58, 0.8);
+  border-color: var(--cyan-primary);
+  transform: translateY(-1px);
+}
+
+.hub-name {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.hub-desc {
+  font-size: 9px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Lines List */
+.lines-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.lines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.line-card {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.line-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-panel);
+  transform: translateX(2px);
+}
+
+.line-card.line-selected {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.line-color-bar {
+  width: 4px;
+}
+
+.line-info {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  width: 100%;
+  gap: 4px;
+}
+
+.line-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.line-badge {
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.line-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.line-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.line-stations {
+  color: var(--text-muted);
+}
+
+.line-status {
+  font-size: 9px;
+  padding: 1px 5px;
+}
+
+/* Active Corridor HUD Isolation Card */
+.corridor-active-hud {
+  background: rgba(14, 25, 46, 0.85);
+  border: 1px solid var(--border-panel);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 0 16px var(--cyan-glow);
+  animation: fadeIn 0.2s ease;
+}
+
+.hud-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hud-tag {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--cyan-primary);
+  letter-spacing: 0.08em;
+}
+
+.hud-clear-btn {
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  color: #fecdd3;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hud-clear-btn:hover {
+  background: rgba(244, 63, 94, 0.3);
+  color: #fff;
+}
+
+.hud-corridor-name {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hud-corridor-desc {
+  font-size: 10px;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .network-sidebar {
+    width: 88vw;
+    max-width: 340px;
+  }
+}

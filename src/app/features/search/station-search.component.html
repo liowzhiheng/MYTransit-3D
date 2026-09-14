@@ -1,0 +1,74 @@
+<div class="search-box-root">
+  <!-- Search Input Bar -->
+  <div class="search-input-bar" [class.focused]="isOpen">
+    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+
+    <input
+      #searchInput
+      type="text"
+      class="search-input font-mono"
+      [value]="query"
+      (input)="onInput($event)"
+      (keydown)="onKeydown($event)"
+      (focus)="query.trim() && (isOpen = results.length > 0)"
+      placeholder="Search station or code (e.g. Pasar Seni, KG16)..."
+      aria-label="Search station or transit corridor"
+      autocomplete="off"
+      spellcheck="false"
+    />
+
+    <button *ngIf="query" class="clear-btn font-mono" (click)="clearSearch()" title="Clear search">
+      ✕
+    </button>
+
+    <span class="search-hint font-mono" (click)="focusSearch()" title="Press / or Ctrl+K to search">/</span>
+  </div>
+
+  <!-- Autocomplete Results Dropdown -->
+  <div *ngIf="isOpen" class="search-dropdown">
+    <div class="dropdown-header font-mono">
+      <span>MATCHING STATIONS ({{ results.length }})</span>
+      <span class="nav-hint">Use ↑ ↓ to navigate, Enter to select</span>
+    </div>
+
+    <ul class="results-list" role="listbox">
+      <li
+        *ngFor="let item of results; let i = index"
+        class="result-item"
+        [class.selected]="i === selectedIndex"
+        (click)="selectResult(item.station)"
+        (mouseenter)="selectedIndex = i"
+        role="option"
+        [attr.aria-selected]="i === selectedIndex"
+      >
+        <div class="result-main-row">
+          <span class="station-name-text">{{ item.station.name }}</span>
+          <span *ngIf="item.station.code" class="station-code-pill font-mono">{{ item.station.code }}</span>
+        </div>
+
+        <div class="result-sub-row">
+          <div class="mode-pills">
+            <span
+              *ngFor="let m of item.station.modes"
+              class="mode-pill font-mono"
+              [style.background]="getModeColor(m)"
+            >
+              {{ m }}
+            </span>
+          </div>
+          <span class="lines-text font-mono">{{ item.station.lines.join(', ') }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Empty Search Results -->
+  <div *ngIf="isOpen && results.length === 0 && query.trim()" class="search-dropdown empty-dropdown font-mono">
+    <div class="empty-state-text">
+      No stations found matching "<span class="query-highlight">{{ query }}</span>"
+    </div>
+  </div>
+</div>

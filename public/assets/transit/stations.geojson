@@ -1,0 +1,3634 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.654812,
+          2.964974
+        ]
+      },
+      "properties": {
+        "id": "stn_16-sierra",
+        "name": "16 Sierra",
+        "code": "PY38",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.672913,
+          3.118712
+        ]
+      },
+      "properties": {
+        "id": "stn_abdullah-hukum",
+        "name": "Abdullah Hukum",
+        "code": "KJ17",
+        "lines": "LRT Kelana Jaya Line, KTM Komuter",
+        "modes": "LRT, KTM",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.572029,
+          3.023151
+        ]
+      },
+      "properties": {
+        "id": "stn_alam-megah",
+        "name": "Alam Megah",
+        "code": "KJ35",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.656468,
+          3.0547
+        ]
+      },
+      "properties": {
+        "id": "stn_alam-sutera",
+        "name": "Alam Sutera",
+        "code": "SP21",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.760049,
+          3.150318
+        ]
+      },
+      "properties": {
+        "id": "stn_ampang",
+        "name": "Ampang",
+        "code": "AG18",
+        "lines": "LRT Ampang Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.719017,
+          3.159894
+        ]
+      },
+      "properties": {
+        "id": "stn_ampang-park",
+        "name": "Ampang Park",
+        "code": "KJ9",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.71781,
+          3.16225
+        ]
+      },
+      "properties": {
+        "id": "stn_ampang-park",
+        "name": "Ampang Park",
+        "code": "PY20",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.673367,
+          3.113212
+        ]
+      },
+      "properties": {
+        "id": "stn_angkasapuri",
+        "name": "Angkasapuri",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.586372,
+          3.108643
+        ]
+      },
+      "properties": {
+        "id": "stn_ara-damansara",
+        "name": "Ara Damansara",
+        "code": "KJ26",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.637695,
+          3.104343
+        ]
+      },
+      "properties": {
+        "id": "stn_asia-jaya",
+        "name": "Asia Jaya",
+        "code": "KJ21",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.670555,
+          3.062131
+        ]
+      },
+      "properties": {
+        "id": "stn_awan-besar",
+        "name": "Awan Besar",
+        "code": "SP19",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.465556,
+          3.0625
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-baru-klang",
+        "name": "Bandar Baru KLang",
+        "code": "SA17",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.445833,
+          2.993056
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-bukit-tinggi",
+        "name": "Bandar Bukit Tinggi",
+        "code": "SA24",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.612855,
+          3.017111
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-puteri",
+        "name": "Bandar Puteri",
+        "code": "SP27",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.711113,
+          3.076144
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-tasik-selatan",
+        "name": "Bandar Tasik Selatan",
+        "code": "SP15",
+        "lines": "LRT Sri Petaling Line, KTM Komuter",
+        "modes": "LRT, KTM",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.775109,
+          3.048223
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-tun-hussein-onn",
+        "name": "Bandar Tun Hussein Onn",
+        "code": "KG29",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.712466,
+          3.089576
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-tun-razak",
+        "name": "Bandar Tun Razak",
+        "code": "SP14",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.618605,
+          3.145716
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-utama",
+        "name": "Bandar Utama",
+        "code": "KG09 / SA1",
+        "lines": "MRT, SA",
+        "modes": "MRT, LRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.604444,
+          3.133333
+        ]
+      },
+      "properties": {
+        "id": "stn_bandar-utama-11",
+        "name": "Bandar Utama 11",
+        "code": "SA3",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.694485,
+          3.155567
+        ]
+      },
+      "properties": {
+        "id": "stn_bandaraya",
+        "name": "Bandaraya",
+        "code": "AG6 / SP6",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.785943,
+          2.904467
+        ]
+      },
+      "properties": {
+        "id": "stn_bangi",
+        "name": "Bangi",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.679062,
+          3.127588
+        ]
+      },
+      "properties": {
+        "id": "stn_bangsar-bank-rakyat",
+        "name": "Bangsar - Bank Rakyat",
+        "code": "KJ16",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.693118,
+          3.155105
+        ]
+      },
+      "properties": {
+        "id": "stn_bank-negara",
+        "name": "Bank Negara",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.773383,
+          3.041339
+        ]
+      },
+      "properties": {
+        "id": "stn_batu-11-cheras",
+        "name": "Batu 11 Cheras",
+        "code": "KG30",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.681215,
+          3.237796
+        ]
+      },
+      "properties": {
+        "id": "stn_batu-caves",
+        "name": "Batu Caves",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.681138,
+          3.198485
+        ]
+      },
+      "properties": {
+        "id": "stn_batu-kentomenn",
+        "name": "Batu Kentomenn",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.559811,
+          3.076091
+        ]
+      },
+      "properties": {
+        "id": "stn_batu-tiga",
+        "name": "Batu Tiga",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.470176,
+          3.036147
+        ]
+      },
+      "properties": {
+        "id": "stn_bukit-badak",
+        "name": "Bukit Badak",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.711224,
+          3.146262
+        ]
+      },
+      "properties": {
+        "id": "stn_bukit-bintang",
+        "name": "Bukit Bintang",
+        "code": "KG18A / MR6",
+        "lines": "MRT, KL Monorail Line",
+        "modes": "MRT, MONORAIL",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.771072,
+          3.026413
+        ]
+      },
+      "properties": {
+        "id": "stn_bukit-dukung",
+        "name": "Bukit Dukung",
+        "code": "KG31",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.692125,
+          3.058196
+        ]
+      },
+      "properties": {
+        "id": "stn_bukit-jalil",
+        "name": "Bukit Jalil",
+        "code": "SP17",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.704809,
+          3.156214
+        ]
+      },
+      "properties": {
+        "id": "stn_bukit-nanas",
+        "name": "Bukit Nanas",
+        "code": "MR8",
+        "lines": "KL Monorail Line",
+        "modes": "MONORAIL",
+        "primaryMode": "MONORAIL",
+        "color": "#84bd00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.756677,
+          3.140575
+        ]
+      },
+      "properties": {
+        "id": "stn_cahaya",
+        "name": "Cahaya",
+        "code": "AG17",
+        "lines": "LRT Ampang Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.752979,
+          3.138324
+        ]
+      },
+      "properties": {
+        "id": "stn_cempaka",
+        "name": "Cempaka",
+        "code": "AG16",
+        "lines": "LRT Ampang Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.715968,
+          3.1282
+        ]
+      },
+      "properties": {
+        "id": "stn_chan-sow-lin",
+        "name": "Chan Sow Lin",
+        "code": "AG11 / SP11 / PY24",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line, MRT Putrajaya Line",
+        "modes": "MRT, LRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.714178,
+          3.112609
+        ]
+      },
+      "properties": {
+        "id": "stn_cheras",
+        "name": "Cheras",
+        "code": "SP12",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.698379,
+          3.167358
+        ]
+      },
+      "properties": {
+        "id": "stn_chow-kit",
+        "name": "Chow Kit",
+        "code": "MR10",
+        "lines": "KL Monorail Line",
+        "modes": "MONORAIL",
+        "primaryMode": "MONORAIL",
+        "color": "#84bd00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.722962,
+          3.132829
+        ]
+      },
+      "properties": {
+        "id": "stn_cochrane",
+        "name": "Cochrane",
+        "code": "KG21",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.71801,
+          3.15145
+        ]
+      },
+      "properties": {
+        "id": "stn_conlay",
+        "name": "Conlay",
+        "code": "PY22",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6659,
+          2.9384
+        ]
+      },
+      "properties": {
+        "id": "stn_cyberjaya-city-centre",
+        "name": "Cyberjaya City Centre",
+        "code": "PY40",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6573,
+          2.95
+        ]
+      },
+      "properties": {
+        "id": "stn_cyberjaya-utara",
+        "name": "Cyberjaya Utara",
+        "code": "PY39",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.724489,
+          3.164406
+        ]
+      },
+      "properties": {
+        "id": "stn_damai",
+        "name": "Damai",
+        "code": "KJ8",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.592623,
+          3.199892
+        ]
+      },
+      "properties": {
+        "id": "stn_damansara-damai",
+        "name": "Damansara Damai",
+        "code": "PY05",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.594167,
+          3.122778
+        ]
+      },
+      "properties": {
+        "id": "stn_damansara-idaman",
+        "name": "Damansara Idaman",
+        "code": "SA5",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.701975,
+          3.156942
+        ]
+      },
+      "properties": {
+        "id": "stn_dang-wangi",
+        "name": "Dang Wangi",
+        "code": "KJ12",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.589617,
+          3.095005
+        ]
+      },
+      "properties": {
+        "id": "stn_glenmarie",
+        "name": "Glenmarie",
+        "code": "KJ27 / SA7",
+        "lines": "LRT Kelana Jaya Line, SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.724427,
+          3.231793
+        ]
+      },
+      "properties": {
+        "id": "stn_gombak",
+        "name": "Gombak",
+        "code": "KJ1",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.705999,
+          3.140178
+        ]
+      },
+      "properties": {
+        "id": "stn_hang-tuah",
+        "name": "Hang Tuah",
+        "code": "AG9 / SP9 / MR4",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line, KL Monorail Line",
+        "modes": "LRT, MONORAIL",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.70239,
+          3.17405
+        ]
+      },
+      "properties": {
+        "id": "stn_hospital-kuala-lumpur",
+        "name": "Hospital Kuala Lumpur",
+        "code": "PY18",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.70945,
+          3.14283
+        ]
+      },
+      "properties": {
+        "id": "stn_imbi",
+        "name": "Imbi",
+        "code": "MR5",
+        "lines": "KL Monorail Line",
+        "modes": "MONORAIL",
+        "primaryMode": "MONORAIL",
+        "color": "#84bd00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.62095,
+          3.048101
+        ]
+      },
+      "properties": {
+        "id": "stn_ioi-puchong-jaya",
+        "name": "Ioi Puchong Jaya",
+        "code": "SP24",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.681145,
+          3.189319
+        ]
+      },
+      "properties": {
+        "id": "stn_jalan-ipoh",
+        "name": "Jalan Ipoh",
+        "code": "PY15",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.451944,
+          3.058889
+        ]
+      },
+      "properties": {
+        "id": "stn_jalan-meru",
+        "name": "Jalan Meru",
+        "code": "SA19",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.656402,
+          3.084013
+        ]
+      },
+      "properties": {
+        "id": "stn_jalan-templer",
+        "name": "Jalan Templer",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.4475,
+          3.047222
+        ]
+      },
+      "properties": {
+        "id": "stn_jambatan-kota",
+        "name": "Jambatan Kota",
+        "code": "SA20",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.735344,
+          3.167204
+        ]
+      },
+      "properties": {
+        "id": "stn_jelatek",
+        "name": "Jelatek",
+        "code": "KJ6",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.655829,
+          3.209544
+        ]
+      },
+      "properties": {
+        "id": "stn_jinjang",
+        "name": "Jinjang",
+        "code": "PY11",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.402599,
+          3.013128
+        ]
+      },
+      "properties": {
+        "id": "stn_jln-kastam",
+        "name": "Jln Kastam",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.459167,
+          2.976111
+        ]
+      },
+      "properties": {
+        "id": "stn_johan-setia",
+        "name": "Johan Setia",
+        "code": "SA26",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.790473,
+          2.983
+        ]
+      },
+      "properties": {
+        "id": "stn_kajang",
+        "name": "Kajang",
+        "code": "KG35",
+        "lines": "MRT, KTM Komuter",
+        "modes": "MRT, KTM",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.79207,
+          2.96264
+        ]
+      },
+      "properties": {
+        "id": "stn_kajang-2",
+        "name": "Kajang 2",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.706608,
+          3.161386
+        ]
+      },
+      "properties": {
+        "id": "stn_kampung-baru-cbp-coopbank-pertama",
+        "name": "Kampung Baru - Cbp Coopbank Pertama",
+        "code": "KJ11",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.675528,
+          3.205207
+        ]
+      },
+      "properties": {
+        "id": "stn_kampung-batu",
+        "name": "Kampung Batu",
+        "code": "PY13",
+        "lines": "MRT Putrajaya Line, KTM Komuter",
+        "modes": "MRT, KTM",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.578499,
+          3.197266
+        ]
+      },
+      "properties": {
+        "id": "stn_kampung-selamat",
+        "name": "Kampung Selamat",
+        "code": "PY03",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.616667,
+          3.134722
+        ]
+      },
+      "properties": {
+        "id": "stn_kayu-ara",
+        "name": "Kayu Ara",
+        "code": "SA2",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6043,
+          3.112497
+        ]
+      },
+      "properties": {
+        "id": "stn_kelana-jaya",
+        "name": "Kelana Jaya",
+        "code": "KJ24",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6797,
+          3.19563
+        ]
+      },
+      "properties": {
+        "id": "stn_kentomen",
+        "name": "Kentomen",
+        "code": "PY14",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.637381,
+          3.202996
+        ]
+      },
+      "properties": {
+        "id": "stn_kepong",
+        "name": "Kepong",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.648193,
+          3.211663
+        ]
+      },
+      "properties": {
+        "id": "stn_kepong-baru",
+        "name": "Kepong Baru",
+        "code": "PY10",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.668572,
+          3.115506
+        ]
+      },
+      "properties": {
+        "id": "stn_kerinchi",
+        "name": "Kerinchi",
+        "code": "KJ18",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.561944,
+          3.082222
+        ]
+      },
+      "properties": {
+        "id": "stn_kerjaya",
+        "name": "Kerjaya",
+        "code": "SA9",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.632339,
+          3.084828
+        ]
+      },
+      "properties": {
+        "id": "stn_kg-dato-harun",
+        "name": "Kg Dato Harun",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.41023,
+          3.020253
+        ]
+      },
+      "properties": {
+        "id": "stn_kg-raja-uda",
+        "name": "Kg Raja Uda",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.644294,
+          3.050506
+        ]
+      },
+      "properties": {
+        "id": "stn_kinrara",
+        "name": "Kinrara",
+        "code": "SP22",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.686726,
+          3.133813
+        ]
+      },
+      "properties": {
+        "id": "stn_kl-sentral-redone",
+        "name": "KL Sentral - Redone",
+        "code": "KJ15 / MR1",
+        "lines": "LRT Kelana Jaya Line, KL Monorail Line, KTM Komuter",
+        "modes": "LRT, MONORAIL, KTM",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.449543,
+          3.043078
+        ]
+      },
+      "properties": {
+        "id": "stn_klang",
+        "name": "KLang",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.441667,
+          3.005278
+        ]
+      },
+      "properties": {
+        "id": "stn_klang-jaya",
+        "name": "KLang Jaya",
+        "code": "SA23",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.713287,
+          3.158935
+        ]
+      },
+      "properties": {
+        "id": "stn_klcc",
+        "name": "KLcc",
+        "code": "KJ10",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.57869,
+          3.150134
+        ]
+      },
+      "properties": {
+        "id": "stn_kota-damansara",
+        "name": "Kota Damansara",
+        "code": "KG06",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.693333,
+          3.139444
+        ]
+      },
+      "properties": {
+        "id": "stn_kuala-lumpur",
+        "name": "Kuala Lumpur",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.554794,
+          3.258267
+        ]
+      },
+      "properties": {
+        "id": "stn_kuang",
+        "name": "Kuang",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.694124,
+          3.089546
+        ]
+      },
+      "properties": {
+        "id": "stn_kuchai",
+        "name": "Kuchai",
+        "code": "PY27",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.572099,
+          3.176239
+        ]
+      },
+      "properties": {
+        "id": "stn_kwasa-damansara",
+        "name": "Kwasa Damansara",
+        "code": "KG04 / PY01",
+        "lines": "MRT, MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.564651,
+          3.170112
+        ]
+      },
+      "properties": {
+        "id": "stn_kwasa-sentral",
+        "name": "Kwasa Sentral",
+        "code": "KG05",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.591034,
+          3.112094
+        ]
+      },
+      "properties": {
+        "id": "stn_lembah-subang",
+        "name": "Lembah Subang",
+        "code": "KJ25",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.699268,
+          3.138743
+        ]
+      },
+      "properties": {
+        "id": "stn_maharajalela",
+        "name": "Maharajalela",
+        "code": "MR3",
+        "lines": "KL Monorail Line",
+        "modes": "MONORAIL",
+        "primaryMode": "MONORAIL",
+        "color": "#84bd00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.727546,
+          3.123456
+        ]
+      },
+      "properties": {
+        "id": "stn_maluri",
+        "name": "Maluri",
+        "code": "AG13 / KG22",
+        "lines": "LRT Ampang Line, MRT",
+        "modes": "MRT, LRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.696523,
+          3.149418
+        ]
+      },
+      "properties": {
+        "id": "stn_masjid-jamek",
+        "name": "Masjid Jamek",
+        "code": "AG7 / KJ13 / SP7",
+        "lines": "LRT Ampang Line, LRT Kelana Jaya Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.69888,
+          3.15935
+        ]
+      },
+      "properties": {
+        "id": "stn_medan-tuanku",
+        "name": "Medan Tuanku",
+        "code": "MR9",
+        "lines": "KL Monorail Line",
+        "modes": "MONORAIL",
+        "primaryMode": "MONORAIL",
+        "color": "#84bd00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6101,
+          3.0761
+        ]
+      },
+      "properties": {
+        "id": "stn_mentari",
+        "name": "Mentari",
+        "code": "BRT2",
+        "lines": "BRT Sunway Line",
+        "modes": "BUS",
+        "primaryMode": "BUS",
+        "color": "#115740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.70205,
+          3.141969
+        ]
+      },
+      "properties": {
+        "id": "stn_merdeka",
+        "name": "Merdeka",
+        "code": "KG17",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.639402,
+          3.214438
+        ]
+      },
+      "properties": {
+        "id": "stn_metro-prima",
+        "name": "Metro Prima",
+        "code": "PY09",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.717922,
+          3.120973
+        ]
+      },
+      "properties": {
+        "id": "stn_miharja",
+        "name": "Miharja",
+        "code": "AG12",
+        "lines": "LRT Ampang Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.662552,
+          3.062229
+        ]
+      },
+      "properties": {
+        "id": "stn_muhibbah",
+        "name": "Muhibbah",
+        "code": "SP20",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.609077,
+          3.155301
+        ]
+      },
+      "properties": {
+        "id": "stn_mutiara-damansara",
+        "name": "Mutiara Damansara",
+        "code": "KG08",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.687336,
+          3.137317
+        ]
+      },
+      "properties": {
+        "id": "stn_muzium-negara",
+        "name": "Muzium Negara",
+        "code": "KG15",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.492742,
+          3.052532
+        ]
+      },
+      "properties": {
+        "id": "stn_padang-jawa",
+        "name": "Padang Jawa",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.746509,
+          3.134581
+        ]
+      },
+      "properties": {
+        "id": "stn_pandan-indah",
+        "name": "Pandan Indah",
+        "code": "AG15",
+        "lines": "LRT Ampang Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.739122,
+          3.130141
+        ]
+      },
+      "properties": {
+        "id": "stn_pandan-jaya",
+        "name": "Pandan Jaya",
+        "code": "AG14",
+        "lines": "LRT Ampang Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.669927,
+          3.095607
+        ]
+      },
+      "properties": {
+        "id": "stn_pantai-dalam",
+        "name": "Pantai Dalam",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.450833,
+          3.067778
+        ]
+      },
+      "properties": {
+        "id": "stn_pasar-klang",
+        "name": "Pasar KLang",
+        "code": "SA18",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.695437,
+          3.142366
+        ]
+      },
+      "properties": {
+        "id": "stn_pasar-seni",
+        "name": "Pasar Seni",
+        "code": "KJ14 / KG16",
+        "lines": "LRT Kelana Jaya Line, MRT",
+        "modes": "MRT, LRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.678865,
+          3.119211
+        ]
+      },
+      "properties": {
+        "id": "stn_perhentian-midvalley",
+        "name": "Perhentian Midvalley",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.71834,
+          3.15712
+        ]
+      },
+      "properties": {
+        "id": "stn_persiaran-klcc",
+        "name": "Persiaran KLcc",
+        "code": "PY21",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.664338,
+          3.086485
+        ]
+      },
+      "properties": {
+        "id": "stn_petaling",
+        "name": "Petaling",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.642471,
+          3.129864
+        ]
+      },
+      "properties": {
+        "id": "stn_phileo-damansara",
+        "name": "Phileo Damansara",
+        "code": "KG12",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.702105,
+          3.144049
+        ]
+      },
+      "properties": {
+        "id": "stn_plaza-rakyat",
+        "name": "Plaza Rakyat",
+        "code": "AG8 / SP8",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.605021,
+          3.007913
+        ]
+      },
+      "properties": {
+        "id": "stn_puchong-perdana",
+        "name": "Puchong Perdana",
+        "code": "SP28",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.596692,
+          2.999808
+        ]
+      },
+      "properties": {
+        "id": "stn_puchong-prima",
+        "name": "Puchong Prima",
+        "code": "SP29",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.711957,
+          3.134879
+        ]
+      },
+      "properties": {
+        "id": "stn_pudu",
+        "name": "Pudu",
+        "code": "AG10 / SP10",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.662857,
+          3.143444
+        ]
+      },
+      "properties": {
+        "id": "stn_pusat-bandar-damansara",
+        "name": "Pusat Bandar Damansara",
+        "code": "KG13",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.616057,
+          3.033194
+        ]
+      },
+      "properties": {
+        "id": "stn_pusat-bandar-puchong",
+        "name": "Pusat Bandar Puchong",
+        "code": "SP25",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.691101,
+          3.165399
+        ]
+      },
+      "properties": {
+        "id": "stn_putra",
+        "name": "Putra",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.575491,
+          2.996122
+        ]
+      },
+      "properties": {
+        "id": "stn_putra-heights",
+        "name": "Putra Heights",
+        "code": "KJ37 / SP31",
+        "lines": "LRT Kelana Jaya Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.66099,
+          2.98339
+        ]
+      },
+      "properties": {
+        "id": "stn_putra-permai",
+        "name": "Putra Permai",
+        "code": "PY37",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6715,
+          2.9313
+        ]
+      },
+      "properties": {
+        "id": "stn_putrajaya-sentral",
+        "name": "Putrajaya Sentral",
+        "code": "PY41",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.693586,
+          3.166333
+        ]
+      },
+      "properties": {
+        "id": "stn_pwtc",
+        "name": "Pwtc",
+        "code": "AG4 / SP4",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.710432,
+          3.150878
+        ]
+      },
+      "properties": {
+        "id": "stn_raja-chulan",
+        "name": "Raja Chulan",
+        "code": "MR7",
+        "lines": "KL Monorail Line",
+        "modes": "MONORAIL",
+        "primaryMode": "MONORAIL",
+        "color": "#84bd00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.71017,
+          3.16794
+        ]
+      },
+      "properties": {
+        "id": "stn_raja-uda",
+        "name": "Raja Uda",
+        "code": "PY19",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.575012,
+          3.318955
+        ]
+      },
+      "properties": {
+        "id": "stn_rawang",
+        "name": "Rawang",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.706179,
+          3.102201
+        ]
+      },
+      "properties": {
+        "id": "stn_salak-selatan",
+        "name": "Salak Selatan",
+        "code": "SP13",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.705055,
+          3.098413
+        ]
+      },
+      "properties": {
+        "id": "stn_salak-selatan",
+        "name": "Salak Selatan",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.664032,
+          3.186514
+        ]
+      },
+      "properties": {
+        "id": "stn_segambut",
+        "name": "Segambut",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.486667,
+          3.067222
+        ]
+      },
+      "properties": {
+        "id": "stn_seksyen-7",
+        "name": "Seksyen 7",
+        "code": "SA15",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.665497,
+          3.150977
+        ]
+      },
+      "properties": {
+        "id": "stn_semantan",
+        "name": "Semantan",
+        "code": "KG14",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.695542,
+          3.178484
+        ]
+      },
+      "properties": {
+        "id": "stn_sentul",
+        "name": "Sentul",
+        "code": "AG2 / SP2",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.688802,
+          3.183581
+        ]
+      },
+      "properties": {
+        "id": "stn_sentul",
+        "name": "Sentul",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.684742,
+          3.179369
+        ]
+      },
+      "properties": {
+        "id": "stn_sentul-barat",
+        "name": "Sentul Barat",
+        "code": "PY16",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.695217,
+          3.185897
+        ]
+      },
+      "properties": {
+        "id": "stn_sentul-timur",
+        "name": "Sentul Timur",
+        "code": "AG1 / SP1",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.681474,
+          3.113612
+        ]
+      },
+      "properties": {
+        "id": "stn_seputeh",
+        "name": "Seputeh",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.716056,
+          3.023404
+        ]
+      },
+      "properties": {
+        "id": "stn_serdang",
+        "name": "Serdang",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.709,
+          3.0216
+        ]
+      },
+      "properties": {
+        "id": "stn_serdang-jaya",
+        "name": "Serdang Jaya",
+        "code": "PY33",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.707514,
+          3.028463
+        ]
+      },
+      "properties": {
+        "id": "stn_serdang-raya-selatan",
+        "name": "Serdang Raya Selatan",
+        "code": "PY32",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.704928,
+          3.041674
+        ]
+      },
+      "properties": {
+        "id": "stn_serdang-raya-utara",
+        "name": "Serdang Raya Utara",
+        "code": "PY31",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.440556,
+          3.015833
+        ]
+      },
+      "properties": {
+        "id": "stn_seri-andalas",
+        "name": "Seri Andalas",
+        "code": "SA22",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.61143,
+          3.083373
+        ]
+      },
+      "properties": {
+        "id": "stn_setia-jaya",
+        "name": "Setia Jaya",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.73584,
+          3.17576
+        ]
+      },
+      "properties": {
+        "id": "stn_setiawangsa",
+        "name": "Setiawangsa",
+        "code": "KJ5",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.525302,
+          3.056388
+        ]
+      },
+      "properties": {
+        "id": "stn_shah-alam",
+        "name": "Shah Alam",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.5969,
+          3.0617
+        ]
+      },
+      "properties": {
+        "id": "stn_south-quay-usj-1",
+        "name": "South Quay-usj 1",
+        "code": "BRT6",
+        "lines": "BRT Sunway Line",
+        "modes": "BUS",
+        "primaryMode": "BUS",
+        "color": "#115740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.608302,
+          3.198197
+        ]
+      },
+      "properties": {
+        "id": "stn_sri-damansara-barat",
+        "name": "Sri Damansara Barat",
+        "code": "PY06",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.621396,
+          3.198815
+        ]
+      },
+      "properties": {
+        "id": "stn_sri-damansara-sentral",
+        "name": "Sri Damansara Sentral",
+        "code": "PY07",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.628603,
+          3.208242
+        ]
+      },
+      "properties": {
+        "id": "stn_sri-damansara-timur",
+        "name": "Sri Damansara Timur",
+        "code": "PY08",
+        "lines": "MRT Putrajaya Line, KTM Komuter",
+        "modes": "MRT, KTM",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.665749,
+          3.207108
+        ]
+      },
+      "properties": {
+        "id": "stn_sri-delima",
+        "name": "Sri Delima",
+        "code": "PY12",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.687074,
+          3.061445
+        ]
+      },
+      "properties": {
+        "id": "stn_sri-petaling",
+        "name": "Sri Petaling",
+        "code": "SP18",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.73747,
+          3.199176
+        ]
+      },
+      "properties": {
+        "id": "stn_sri-rampai",
+        "name": "Sri Rampai",
+        "code": "KJ4",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.772899,
+          3.062273
+        ]
+      },
+      "properties": {
+        "id": "stn_sri-raya",
+        "name": "Sri Raya",
+        "code": "KG28",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.585983,
+          3.075972
+        ]
+      },
+      "properties": {
+        "id": "stn_ss-15",
+        "name": "Ss 15",
+        "code": "KJ29",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.585945,
+          3.067182
+        ]
+      },
+      "properties": {
+        "id": "stn_ss-18",
+        "name": "Ss 18",
+        "code": "KJ30",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.786338,
+          2.994514
+        ]
+      },
+      "properties": {
+        "id": "stn_stadium-kajang",
+        "name": "Stadium Kajang",
+        "code": "KG34",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.548889,
+          3.079722
+        ]
+      },
+      "properties": {
+        "id": "stn_stadium-shah-alam",
+        "name": "Stadium Shah Alam",
+        "code": "SA10",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.591111,
+          3.106111
+        ]
+      },
+      "properties": {
+        "id": "stn_subang",
+        "name": "Subang",
+        "code": "SA6",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.572281,
+          3.009421
+        ]
+      },
+      "properties": {
+        "id": "stn_subang-alam",
+        "name": "Subang Alam",
+        "code": "KJ36",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.58775,
+          3.084607
+        ]
+      },
+      "properties": {
+        "id": "stn_subang-jaya",
+        "name": "Subang Jaya",
+        "code": "KJ28",
+        "lines": "LRT Kelana Jaya Line, KTM Komuter",
+        "modes": "LRT, KTM",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.694109,
+          3.161245
+        ]
+      },
+      "properties": {
+        "id": "stn_sultan-ismail",
+        "name": "Sultan Ismail",
+        "code": "AG5 / SP5",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.708231,
+          3.06379
+        ]
+      },
+      "properties": {
+        "id": "stn_sungai-besi",
+        "name": "Sungai Besi",
+        "code": "SP16 / PY29",
+        "lines": "LRT Sri Petaling Line, MRT Putrajaya Line",
+        "modes": "MRT, LRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.580953,
+          3.206392
+        ]
+      },
+      "properties": {
+        "id": "stn_sungai-buloh",
+        "name": "Sungai Buloh",
+        "code": "PY04",
+        "lines": "MRT Putrajaya Line, KTM Komuter",
+        "modes": "MRT, KTM",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.783857,
+          3.000948
+        ]
+      },
+      "properties": {
+        "id": "stn_sungai-jernih",
+        "name": "Sungai Jernih",
+        "code": "KG33",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6087,
+          3.0656
+        ]
+      },
+      "properties": {
+        "id": "stn_sunmed",
+        "name": "Sunmed",
+        "code": "BRT4",
+        "lines": "BRT Sunway Line",
+        "modes": "BUS",
+        "primaryMode": "BUS",
+        "color": "#115740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6016,
+          3.0654
+        ]
+      },
+      "properties": {
+        "id": "stn_sunu-monash",
+        "name": "Sunu-monash",
+        "code": "BRT5",
+        "lines": "BRT Sunway Line",
+        "modes": "BUS",
+        "primaryMode": "BUS",
+        "color": "#115740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6107,
+          3.0706
+        ]
+      },
+      "properties": {
+        "id": "stn_sunway-lagoon",
+        "name": "Sunway Lagoon",
+        "code": "BRT3",
+        "lines": "BRT Sunway Line",
+        "modes": "BUS",
+        "primaryMode": "BUS",
+        "color": "#115740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.6123,
+          3.0828
+        ]
+      },
+      "properties": {
+        "id": "stn_sunway-setia-jaya",
+        "name": "Sunway-setia Jaya",
+        "code": "BRT1",
+        "lines": "BRT Sunway Line",
+        "modes": "BUS",
+        "primaryMode": "BUS",
+        "color": "#115740"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.593925,
+          3.14948
+        ]
+      },
+      "properties": {
+        "id": "stn_surian",
+        "name": "Surian",
+        "code": "KG07",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.590233,
+          3.04815
+        ]
+      },
+      "properties": {
+        "id": "stn_taipan",
+        "name": "Taipan",
+        "code": "KJ32",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.612856,
+          3.11079
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-bahagia",
+        "name": "Taman Bahagia",
+        "code": "KJ23",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.74522,
+          3.079172
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-connaught",
+        "name": "Taman Connaught",
+        "code": "KG26",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.67244,
+          2.98942
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-equine",
+        "name": "Taman Equine",
+        "code": "PY36",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.645248,
+          3.104086
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-jaya",
+        "name": "Taman Jaya",
+        "code": "KJ20",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.72197,
+          3.219558
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-melati",
+        "name": "Taman Melati",
+        "code": "KJ2",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.732186,
+          3.104505
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-midah",
+        "name": "Taman Midah",
+        "code": "KG24",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.740453,
+          3.090989
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-mutiara",
+        "name": "Taman Mutiara",
+        "code": "KG25",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.699867,
+          3.077688
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-naga-emas",
+        "name": "Taman Naga Emas",
+        "code": "PY28",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.623192,
+          3.104716
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-paramount",
+        "name": "Taman Paramount",
+        "code": "KJ22",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.613514,
+          3.022814
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-perindustrian-puchong",
+        "name": "Taman Perindustrian Puchong",
+        "code": "SP26",
+        "lines": "LRT Sri Petaling Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.729371,
+          3.112547
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-pertama",
+        "name": "Taman Pertama",
+        "code": "KG23",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.442222,
+          3.026667
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-selatan",
+        "name": "Taman Selatan",
+        "code": "SA21",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.763552,
+          3.071578
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-suntex",
+        "name": "Taman Suntex",
+        "code": "KG27",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.630539,
+          3.13613
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-tun-dr-ismail",
+        "name": "Taman Tun Dr Ismail",
+        "code": "KG10",
+        "lines": "MRT",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.672178,
+          3.21451
+        ]
+      },
+      "properties": {
+        "id": "stn_taman-wahyu",
+        "name": "Taman Wahyu",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.424947,
+          3.033932
+        ]
+      },
+      "properties": {
+        "id": "stn_telok-gadong",
+        "name": "Telok Gadong",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.432153,
+          3.04089
+        ]
+      },
+      "properties": {
+        "id": "stn_telok-pulai",
+        "name": "Telok Pulai",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.695641,
+          3.173566
+        ]
+      },
+      "properties": {
+        "id": "stn_titiwangsa",
+        "name": "Titiwangsa",
+        "code": "AG3 / SP3 / PY17 / MR11",
+        "lines": "LRT Ampang Line, LRT Sri Petaling Line, MRT Putrajaya Line, KL Monorail Line",
+        "modes": "MRT, LRT, MONORAIL",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.720248,
+          3.142646
+        ]
+      },
+      "properties": {
+        "id": "stn_tun-razak-exchange",
+        "name": "Tun Razak Exchange",
+        "code": "KG20 / PY23",
+        "lines": "MRT, MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.69085,
+          3.13132
+        ]
+      },
+      "properties": {
+        "id": "stn_tun-sambanthan",
+        "name": "Tun Sambanthan",
+        "code": "MR2",
+        "lines": "KL Monorail Line",
+        "modes": "MONORAIL",
+        "primaryMode": "MONORAIL",
+        "color": "#84bd00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.501111,
+          3.0625
+        ]
+      },
+      "properties": {
+        "id": "stn_uitm-shah-alam",
+        "name": "Uitm Shah Alam",
+        "code": "SA14",
+        "lines": "SA",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.787623,
+          2.939775
+        ]
+      },
+      "properties": {
+        "id": "stn_ukm",
+        "name": "Ukm",
+        "code": "",
+        "lines": "KTM Komuter",
+        "modes": "KTM",
+        "primaryMode": "KTM",
+        "color": "#004b87"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.661639,
+          3.114616
+        ]
+      },
+      "properties": {
+        "id": "stn_universiti",
+        "name": "Universiti",
+        "code": "KJ19",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.705396,
+          3.008489
+        ]
+      },
+      "properties": {
+        "id": "stn_upm",
+        "name": "Upm",
+        "code": "PY34",
+        "lines": "MRT Putrajaya Line",
+        "modes": "MRT",
+        "primaryMode": "MRT",
+        "color": "#008751"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.581711,
+          3.029881
+        ]
+      },
+      "properties": {
+        "id": "stn_usj-21",
+        "name": "Usj 21",
+        "code": "KJ34",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.592047,
+          3.055128
+        ]
+      },
+      "properties": {
+        "id": "stn_usj-7",
+        "name": "Usj 7",
+        "code": "KJ31 / BRT7",
+        "lines": "LRT Kelana Jaya Line, BRT Sunway Line",
+        "modes": "LRT, BUS",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.731796,
+          3.205751
+        ]
+      },
+      "properties": {
+        "id": "stn_wangsa-maju",
+        "name": "Wangsa Maju",
+        "code": "KJ3",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          101.588348,
+          3.035062
+        ]
+      },
+      "properties": {
+        "id": "stn_wawasan",
+        "name": "Wawasan",
+        "code": "KJ33",
+        "lines": "LRT Kelana Jaya Line",
+        "modes": "LRT",
+        "primaryMode": "LRT",
+        "color": "#e31837"
+      }
+    }
+  ]
+}
