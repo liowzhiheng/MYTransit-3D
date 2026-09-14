@@ -9,8 +9,8 @@ export const DEFAULT_ZOOM = 13.5;
 export const DEFAULT_PITCH = 50;
 export const DEFAULT_BEARING = -15;
 
-const PRIMARY_STYLE_URL = 'https://tiles.openfreemap.org/styles/dark';
-const FALLBACK_STYLE_URL = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+const PRIMARY_STYLE_URL = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+const FALLBACK_STYLE_URL = 'https://tiles.openfreemap.org/styles/dark';
 
 @Injectable({
   providedIn: 'root'

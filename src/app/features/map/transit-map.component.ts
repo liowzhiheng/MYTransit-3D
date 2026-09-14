@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
+  Input,
   OnDestroy,
   ViewChild,
   inject
@@ -23,6 +24,7 @@ import { Subscription, combineLatest } from 'rxjs';
 })
 export class TransitMapComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef<HTMLDivElement>;
+  @Input() isRightPanelOpen = true;
 
   public mapService = inject(MapService);
   public transitData = inject(TransitDataService);
@@ -39,6 +41,10 @@ export class TransitMapComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     if (this.mapContainer?.nativeElement) {
       this.mapService.initMap(this.mapContainer.nativeElement);
+
+      // Force canvas layout calculation
+      setTimeout(() => this.mapService.resize(), 50);
+      setTimeout(() => this.mapService.resize(), 300);
 
       // Listen for container resize
       if (typeof ResizeObserver !== 'undefined') {
