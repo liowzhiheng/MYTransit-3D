@@ -1,4 +1,4 @@
-﻿# MYTransit 3D — Malaysia Interactive Transit & Urban Digital Twin
+# MYTransit 3D — Malaysia Interactive Transit & Urban Digital Twin
 
 > **A portfolio-grade Smart Transit Operations Center & Geospatial Digital Twin for the Klang Valley rail and bus network (Kuala Lumpur, Malaysia), powered by Angular 19, MapLibre GL JS, RxJS, and official open data from `data.gov.my`.**
 
@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![MapLibre GL](https://img.shields.io/badge/MapLibre_GL-6.9-3969EC?style=flat-square&logo=maplibre)](https://maplibre.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Deploy to GitHub Pages](https://github.com/actions/workflows/deploy.yml/badge.svg)](https://github.com/)
+[![Deploy to GitHub Pages](https://github.com/liowzhiheng/MYTransit-3D/actions/workflows/deploy.yml/badge.svg)](https://github.com/liowzhiheng/MYTransit-3D/actions/workflows/deploy.yml)
 
 ---
 
@@ -160,7 +160,7 @@ npm run update-transit-data
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/MYTransit-3D.git
+git clone https://github.com/liowzhiheng/MYTransit-3D.git
 cd MYTransit-3D
 
 # 2. Install dependencies
