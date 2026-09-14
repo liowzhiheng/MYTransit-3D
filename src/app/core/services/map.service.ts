@@ -74,7 +74,10 @@ export class MapService {
           'bottom-right'
         );
 
-        mapInstance.on('load', () => {
+        let hasInitializedLayers = false;
+        const onMapReady = () => {
+          if (hasInitializedLayers || !this.map) return;
+          hasInitializedLayers = true;
           this.zone.run(() => {
             this.setup3DBuildings();
             if (this.cachedRoutesGeoJson && this.cachedStationsGeoJson) {
@@ -82,8 +85,19 @@ export class MapService {
             }
             this.isMapLoadedSubject.next(true);
             this.updateCameraState();
+            setTimeout(() => this.resize(), 100);
           });
-        });
+        };
+
+        mapInstance.on('load', onMapReady);
+
+        // Safety fallback: Ensure digital twin renders within 2.5s regardless of external tile latency
+        setTimeout(() => {
+          if (!this.isMapLoadedSubject.value) {
+            console.info('[MapService] Activating transit layers via readiness timeout fallback');
+            onMapReady();
+          }
+        }, 2500);
 
         mapInstance.on('move', () => {
           this.zone.run(() => {
@@ -93,16 +107,6 @@ export class MapService {
 
         mapInstance.on('error', e => {
           console.warn('[MapService] MapLibre event warning:', e.error?.message || e);
-          if (this.map && !this.isMapLoadedSubject.value) {
-            console.info('[MapService] Attempting fallback to CARTO Dark Matter style...');
-            try {
-              this.map.setStyle(FALLBACK_STYLE_URL);
-            } catch (err) {
-              this.zone.run(() => {
-                this.errorSubject.next('Failed to initialize basemap tiles.');
-              });
-            }
-          }
         });
       } catch (err) {
         this.zone.run(() => {
@@ -124,7 +128,7 @@ export class MapService {
     this.cachedRoutesGeoJson = routesGeoJson;
     this.cachedStationsGeoJson = stationsGeoJson;
 
-    if (this.map && this.map.isStyleLoaded()) {
+    if (this.map && (this.map.isStyleLoaded() || this.isMapLoadedSubject.value)) {
       this.applyTransitLayers(routesGeoJson, stationsGeoJson);
     }
   }
