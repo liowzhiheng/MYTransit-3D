@@ -9,8 +9,33 @@ export const DEFAULT_ZOOM = 13.5;
 export const DEFAULT_PITCH = 50;
 export const DEFAULT_BEARING = -15;
 
-const PRIMARY_STYLE_URL = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
-const FALLBACK_STYLE_URL = 'https://tiles.openfreemap.org/styles/dark';
+export const CARTO_DARK_STYLE: maplibregl.StyleSpecification = {
+  version: 8,
+  glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
+  sources: {
+    'carto-dark': {
+      type: 'raster',
+      tiles: [
+        'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+        'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+        'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
+        'https://d.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png'
+      ],
+      tileSize: 256,
+      attribution:
+        '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>, © <a href="https://carto.com/attributions" target="_blank">CARTO</a>'
+    }
+  },
+  layers: [
+    {
+      id: 'carto-dark-base',
+      type: 'raster',
+      source: 'carto-dark',
+      minzoom: 0,
+      maxzoom: 20
+    }
+  ]
+};
 
 @Injectable({
   providedIn: 'root'
@@ -54,7 +79,7 @@ export class MapService {
       try {
         const mapInstance = new maplibregl.Map({
           container,
-          style: PRIMARY_STYLE_URL,
+          style: CARTO_DARK_STYLE,
           center: KL_COORDINATES,
           zoom: DEFAULT_ZOOM,
           pitch: DEFAULT_PITCH,
@@ -530,20 +555,12 @@ export class MapService {
     if (!this.map) return;
 
     try {
-      const layers = this.map.getStyle()?.layers || [];
-      let labelLayerId: string | undefined;
-
-      for (const layer of layers) {
-        if (layer.type === 'symbol' && layer.layout && 'text-field' in layer.layout) {
-          labelLayerId = layer.id;
-          break;
-        }
+      if (!this.map.getSource('openmaptiles-buildings')) {
+        this.map.addSource('openmaptiles-buildings', {
+          type: 'vector',
+          url: 'https://tiles.openfreemap.org/planet'
+        });
       }
-
-      const hasOpenMapTiles = !!this.map.getSource('openmaptiles');
-      const sourceName = hasOpenMapTiles ? 'openmaptiles' : this.map.getSource('carto') ? 'carto' : undefined;
-
-      if (!sourceName) return;
 
       if (this.map.getLayer('3d-buildings')) {
         this.map.removeLayer('3d-buildings');
@@ -552,7 +569,7 @@ export class MapService {
       this.map.addLayer(
         {
           id: '3d-buildings',
-          source: sourceName,
+          source: 'openmaptiles-buildings',
           'source-layer': 'building',
           type: 'fill-extrusion',
           minzoom: 13,
@@ -587,8 +604,7 @@ export class MapService {
             ],
             'fill-extrusion-opacity': 0.88
           }
-        },
-        labelLayerId
+        }
       );
     } catch (e) {
       console.warn('[MapService] Could not enable 3D building layer:', e);
