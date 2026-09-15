@@ -9,33 +9,52 @@ export const DEFAULT_ZOOM = 13.5;
 export const DEFAULT_PITCH = 50;
 export const DEFAULT_BEARING = -15;
 
-export const CARTO_DARK_STYLE: maplibregl.StyleSpecification = {
+export const ESRI_DARK_STYLE: maplibregl.StyleSpecification = {
   version: 8,
   glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
   sources: {
-    'carto-dark': {
+    'esri-dark': {
       type: 'raster',
       tiles: [
-        'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-        'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-        'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-        'https://d.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png'
+        'https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}'
       ],
       tileSize: 256,
+      maxzoom: 16,
       attribution:
-        '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>, © <a href="https://carto.com/attributions" target="_blank">CARTO</a>'
+        '© <a href="https://www.esri.com" target="_blank">Esri</a>, HERE, Garmin, © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
+    },
+    'esri-dark-reference': {
+      type: 'raster',
+      tiles: [
+        'https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}'
+      ],
+      tileSize: 256,
+      maxzoom: 16
     }
   },
   layers: [
     {
-      id: 'carto-dark-base',
+      id: 'esri-dark-base',
       type: 'raster',
-      source: 'carto-dark',
+      source: 'esri-dark',
       minzoom: 0,
       maxzoom: 20
+    },
+    {
+      id: 'esri-dark-reference',
+      type: 'raster',
+      source: 'esri-dark-reference',
+      minzoom: 0,
+      maxzoom: 20,
+      paint: {
+        'raster-opacity': 0.75
+      }
     }
   ]
 };
+
+// Backward compatibility alias
+export const CARTO_DARK_STYLE = ESRI_DARK_STYLE;
 
 @Injectable({
   providedIn: 'root'
@@ -79,7 +98,7 @@ export class MapService {
       try {
         const mapInstance = new maplibregl.Map({
           container,
-          style: CARTO_DARK_STYLE,
+          style: ESRI_DARK_STYLE,
           center: KL_COORDINATES,
           zoom: DEFAULT_ZOOM,
           pitch: DEFAULT_PITCH,
@@ -94,7 +113,7 @@ export class MapService {
           new maplibregl.AttributionControl({
             compact: true,
             customAttribution:
-              '© <a href="https://openfreemap.org" target="_blank">OpenFreeMap</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> | Transit: <a href="https://data.gov.my" target="_blank">data.gov.my</a>'
+              '© <a href="https://www.esri.com" target="_blank">Esri</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> | Transit: <a href="https://data.gov.my" target="_blank">data.gov.my</a>'
           }),
           'bottom-right'
         );
@@ -104,10 +123,10 @@ export class MapService {
           if (hasInitializedLayers || !this.map) return;
           hasInitializedLayers = true;
           this.zone.run(() => {
-            this.setup3DBuildings();
             if (this.cachedRoutesGeoJson && this.cachedStationsGeoJson) {
               this.applyTransitLayers(this.cachedRoutesGeoJson, this.cachedStationsGeoJson);
             }
+            this.setup3DBuildings();
             this.isMapLoadedSubject.next(true);
             this.updateCameraState();
             setTimeout(() => this.resize(), 100);
@@ -116,13 +135,13 @@ export class MapService {
 
         mapInstance.on('load', onMapReady);
 
-        // Safety fallback: Ensure digital twin renders within 2.5s regardless of external tile latency
+        // Safety fallback: Ensure digital twin renders within 1.5s regardless of external tile latency
         setTimeout(() => {
           if (!this.isMapLoadedSubject.value) {
             console.info('[MapService] Activating transit layers via readiness timeout fallback');
             onMapReady();
           }
-        }, 2500);
+        }, 1500);
 
         mapInstance.on('move', () => {
           this.zone.run(() => {
@@ -153,7 +172,7 @@ export class MapService {
     this.cachedRoutesGeoJson = routesGeoJson;
     this.cachedStationsGeoJson = stationsGeoJson;
 
-    if (this.map && (this.map.isStyleLoaded() || this.isMapLoadedSubject.value)) {
+    if (this.map) {
       this.applyTransitLayers(routesGeoJson, stationsGeoJson);
     }
   }
@@ -163,6 +182,13 @@ export class MapService {
     stationsGeoJson: FeatureCollection
   ): void {
     if (!this.map) return;
+
+    if (!this.map.isStyleLoaded()) {
+      this.map.once('style.load', () => {
+        this.applyTransitLayers(routesGeoJson, stationsGeoJson);
+      });
+      return;
+    }
 
     try {
       // 1. Routes Source & Layers
@@ -252,16 +278,16 @@ export class MapService {
           }
         });
 
-        // Station text label (visible at zoom >= 13)
+        // Station text label (visible at zoom >= 12)
         this.map.addLayer({
           id: 'transit-stations-label',
           type: 'symbol',
           source: 'transit-stations',
-          minzoom: 13,
+          minzoom: 12,
           layout: {
             'text-field': ['get', 'name'],
             'text-font': ['Noto Sans Regular'],
-            'text-size': ['interpolate', ['linear'], ['zoom'], 13, 10, 16, 12.5],
+            'text-size': ['interpolate', ['linear'], ['zoom'], 12, 9.5, 14, 11, 16, 12.5],
             'text-offset': [0, 0.9],
             'text-anchor': 'top',
             'text-optional': true
@@ -280,6 +306,10 @@ export class MapService {
         // Mouse hover and click events
         this.setupStationInteractions();
       }
+
+      console.info(
+        `[MapService] Mounted transit network: ${routesGeoJson.features?.length || 0} routes, ${stationsGeoJson.features?.length || 0} stations.`
+      );
     } catch (err) {
       console.warn('[MapService] Error applying transit layers:', err);
     }
@@ -377,7 +407,12 @@ export class MapService {
    * Render real-time vehicle positions on MapLibre
    */
   setVehicles(geoJson: FeatureCollection): void {
-    if (!this.map || !this.map.isStyleLoaded()) return;
+    if (!this.map) return;
+
+    if (!this.map.isStyleLoaded()) {
+      this.map.once('style.load', () => this.setVehicles(geoJson));
+      return;
+    }
 
     try {
       const source = this.map.getSource('transit-vehicles') as maplibregl.GeoJSONSource;
@@ -552,7 +587,7 @@ export class MapService {
   }
 
   private setup3DBuildings(): void {
-    if (!this.map) return;
+    if (!this.map || !this.map.isStyleLoaded()) return;
 
     try {
       if (!this.map.getSource('openmaptiles-buildings')) {
@@ -565,6 +600,8 @@ export class MapService {
       if (this.map.getLayer('3d-buildings')) {
         this.map.removeLayer('3d-buildings');
       }
+
+      const beforeLayerId = this.map.getLayer('transit-routes-glow') ? 'transit-routes-glow' : undefined;
 
       this.map.addLayer(
         {
@@ -604,7 +641,8 @@ export class MapService {
             ],
             'fill-extrusion-opacity': 0.88
           }
-        }
+        },
+        beforeLayerId
       );
     } catch (e) {
       console.warn('[MapService] Could not enable 3D building layer:', e);
