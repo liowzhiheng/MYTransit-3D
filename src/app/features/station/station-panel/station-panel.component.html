@@ -1,65 +1,54 @@
-<aside class="station-sidebar" [class.panel-collapsed]="!isOpen">
-  <div class="panel-header">
-    <div class="header-badge-row">
-      <span class="section-tag font-mono">STATION TELEMETRY</span>
-      <button class="close-btn" (click)="closePanel.emit()" title="Minimize Panel">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<aside class="apple-inspector" [class.panel-collapsed]="!isOpen">
+  <div class="inspector-header">
+    <div class="inspector-title-row">
+      <div class="station-name-cluster" *ngIf="station; else emptyHeader">
+        <h2 class="station-title">{{ station.name }}</h2>
+        <div class="station-badge-row">
+          <span *ngIf="station.code" class="station-code-pill font-mono">{{ station.code }}</span>
+          <span
+            *ngFor="let m of station.modes"
+            class="mode-pill"
+            [style.background-color]="getModeColor(m) + '22'"
+            [style.color]="getModeColor(m)"
+          >
+            {{ m }}
+          </span>
+        </div>
+      </div>
+      <ng-template #emptyHeader>
+        <div>
+          <h2 class="station-title text-muted">Station Inspector</h2>
+          <span class="station-subtitle">Select a station on the map</span>
+        </div>
+      </ng-template>
+
+      <button class="panel-close-btn" (click)="closePanel.emit()" title="Hide Inspector" aria-label="Hide Inspector">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
-
-    <div *ngIf="station; else emptyState">
-      <div class="station-title-row">
-        <h2 class="station-name">{{ station.name }}</h2>
-        <span *ngIf="station.code" class="station-code font-mono">{{ station.code }}</span>
-      </div>
-
-      <!-- Mode badges -->
-      <div class="station-modes">
-        <span
-          *ngFor="let m of station.modes"
-          class="mode-badge font-mono"
-          [style.border-color]="getModeColor(m)"
-          [style.color]="getModeColor(m)"
-        >
-          {{ m }}
-        </span>
-      </div>
-    </div>
-
-    <ng-template #emptyState>
-      <h2 class="station-name text-muted">No Station Selected</h2>
-    </ng-template>
   </div>
 
-  <div *ngIf="station; else emptyDetails" class="station-content">
-    <!-- Quick Spatial Action Controls -->
-    <div class="action-buttons-row">
-      <button class="action-btn" (click)="focusIn3D()" title="Close 3D Perspective">
+  <div *ngIf="station; else emptyDetails" class="inspector-scrollable">
+    <!-- Spatial Action Buttons -->
+    <div class="actions-row">
+      <button class="action-pill-btn" (click)="focusIn3D()" title="Fly camera to 3D station perspective">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
         </svg>
-        <span>FOCUS 3D</span>
+        <span>Focus 3D</span>
       </button>
 
-      <button class="action-btn" (click)="focusTopDown()" title="2D Orthographic View">
+      <button class="action-pill-btn" (click)="focusTopDown()" title="Orthographic 2D top-down view">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
         </svg>
-        <span>TOP-DOWN</span>
+        <span>Top-Down</span>
       </button>
 
-      <button class="action-btn" (click)="copyCoordinates()" title="Copy Coordinates">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-        </svg>
-        <span>COORDS</span>
-      </button>
-
-      <button class="action-btn" (click)="shareStation()" title="Share Link">
+      <button class="action-pill-btn" (click)="shareStation()" title="Copy direct station link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="18" cy="5" r="3"></circle>
           <circle cx="6" cy="12" r="3"></circle>
@@ -67,127 +56,107 @@
           <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
           <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
         </svg>
-        <span>SHARE</span>
+        <span>Share</span>
       </button>
     </div>
 
     <!-- Notification Toast if copied -->
-    <div *ngIf="copyStatus()" class="status-toast font-mono">
-      <span class="pulse-dot"></span>
+    <div *ngIf="copyStatus()" class="toast-capsule font-mono">
+      <span class="status-indicator-dot"></span>
       {{ copyStatus() }}
     </div>
 
-    <!-- Operational Status Card -->
-    <div class="info-card">
-      <div class="card-label font-mono">SERVICE STATUS</div>
-      <div class="status-row">
-        <span class="status-pill status-live">
+    <!-- Service Status Card -->
+    <div class="inspector-card">
+      <div class="card-heading">Service Status</div>
+      <div class="service-status-row">
+        <div class="status-pill status-live">
           <span class="pulse-dot"></span>
-          {{ station.operationalStatus || 'OPERATIONAL' }}
-        </span>
-        <span class="status-desc font-mono">Normal headway active</span>
+          <span>{{ station.operationalStatus || 'Operational' }}</span>
+        </div>
+        <span class="status-secondary-text">Published headways active</span>
       </div>
     </div>
 
-    <!-- Multi-Line Scheduled Arrival Departures -->
-    <div class="info-card">
-      <div class="card-label-row">
-        <span class="card-label font-mono">SCHEDULED HEADWAYS BY LINE</span>
-        <span class="status-pill status-scheduled">SCHEDULED</span>
+    <!-- Scheduled Headways by Line -->
+    <div class="inspector-card">
+      <div class="card-heading-row">
+        <span class="card-heading">Scheduled Headways</span>
+        <span class="status-pill status-scheduled">Timetable</span>
       </div>
 
-      <div class="line-schedules-list">
-        <div *ngFor="let item of getLineSchedules()" class="line-schedule-card">
-          <div class="sched-color-strip" [style.background-color]="item.lineColor"></div>
-          <div class="sched-main">
-            <div class="sched-line-title">
-              <span class="sched-badge font-mono" [style.background-color]="item.lineColor">
+      <div class="schedules-stack">
+        <div *ngFor="let item of getLineSchedules()" class="schedule-item-card">
+          <div class="schedule-color-bar" [style.background-color]="item.lineColor"></div>
+          <div class="schedule-body">
+            <div class="schedule-line-header">
+              <span class="schedule-line-badge font-mono" [style.background-color]="item.lineColor">
                 {{ item.lineCode }}
               </span>
-              <span class="sched-name">{{ item.lineName }}</span>
+              <span class="schedule-line-name">{{ item.lineName }}</span>
             </div>
-            <div class="sched-arrival-row font-mono">
-              <div class="sched-countdown">
-                NEXT <span class="sched-mins">0{{ item.nextArrivalMinutes }}</span> MIN
-              </div>
-              <div class="sched-freq">Every ~{{ item.frequencyMinutes }} min</div>
+            <div class="schedule-arrival-info">
+              <span class="arrival-pill">In {{ item.nextArrivalMinutes }} min</span>
+              <span class="frequency-subtext">Every ~{{ item.frequencyMinutes }} min</span>
             </div>
           </div>
         </div>
       </div>
-      <p class="service-note font-mono">Derived from official Prasarana/KTMB timetable headways. GTFS-RT feed validation scheduled for Phase 5.</p>
+      <p class="service-footnote">Derived from published Prasarana / KTMB timetable intervals.</p>
     </div>
 
-    <!-- Interconnecting Lines -->
-    <div class="info-card">
-      <div class="card-label font-mono">CONNECTING LINES ({{ station.lines.length }})</div>
-      <div class="station-lines-list">
-        <div *ngFor="let line of station.lines" class="connected-line-item">
-          <span class="connected-bullet" [style.background-color]="getLineColor(line)"></span>
-          <span class="connected-name">{{ line }}</span>
+    <!-- Connecting Lines -->
+    <div class="inspector-card">
+      <div class="card-heading">Connecting Lines ({{ station.lines.length }})</div>
+      <div class="connecting-lines-list">
+        <div *ngFor="let line of station.lines" class="connecting-line-tag">
+          <span class="tag-color-bullet" [style.background-color]="getLineColor(line)"></span>
+          <span class="tag-line-name">{{ line }}</span>
         </div>
       </div>
     </div>
 
-    <!-- Geospatial Telemetry Coordinates -->
-    <div class="info-card">
-      <div class="card-label font-mono">GEOSPATIAL ANCHOR</div>
-      <div class="coords-grid font-mono">
-        <div class="coord-item">
-          <span class="coord-k">LAT</span>
-          <span class="coord-v">{{ station.latitude.toFixed(6) }}° N</span>
-        </div>
-        <div class="coord-item">
-          <span class="coord-k">LNG</span>
-          <span class="coord-v">{{ station.longitude.toFixed(6) }}° E</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Data Source Card -->
-    <div class="info-card data-source-card">
-      <div class="card-label font-mono">DATA PROVENANCE</div>
-      <div class="source-info">
-        <div class="source-item">
-          <span class="source-dot"></span>
-          <span>Malaysian Gov Open Data / data.gov.my</span>
-        </div>
-        <div class="source-item">
-          <span class="source-dot"></span>
-          <span>Prasarana Static GTFS Headways</span>
-        </div>
+    <!-- Data Provenance -->
+    <div class="provenance-section">
+      <span class="provenance-label">Data Provenance</span>
+      <div class="provenance-notes">
+        <p>• GTFS Static & Timetable Datasets (Prasarana & KTMB)</p>
+        <p>• Open Data Portal: data.gov.my</p>
       </div>
     </div>
   </div>
 
   <ng-template #emptyDetails>
-    <div class="empty-guide">
-      <div class="radar-scan-box">
-        <div class="radar-circle"></div>
+    <div class="empty-state-view">
+      <div class="empty-icon-circle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 7v5l3 3"></path>
+        </svg>
       </div>
-      <p class="empty-title">Inspection Radar Standby</p>
-      <p class="empty-sub">Search for a station or click any station node on the 3D map canvas to examine telemetry, interconnects, and headway timings.</p>
+      <h3 class="empty-heading">Select a Station</h3>
+      <p class="empty-description">Search for a station or select any node on the 3D map canvas to examine lines, headways, and interchange connections.</p>
 
-      <div class="empty-quick-hubs">
-        <span class="quick-hubs-label font-mono">EXPLORE MAJOR INTERCHANGES</span>
-        <div class="quick-hubs-list">
-          <button class="hub-chip-btn" (click)="selectQuickStation('KL Sentral')">
-            <span class="hub-dot ktm"></span>KL Sentral
+      <div class="interchange-shortcuts">
+        <span class="shortcuts-label">Major Interchanges</span>
+        <div class="shortcuts-grid">
+          <button class="shortcut-pill" (click)="selectQuickStation('KL Sentral')">
+            <span class="shortcut-dot ktm"></span>KL Sentral
           </button>
-          <button class="hub-chip-btn" (click)="selectQuickStation('Pasar Seni')">
-            <span class="hub-dot lrt"></span>Pasar Seni
+          <button class="shortcut-pill" (click)="selectQuickStation('Pasar Seni')">
+            <span class="shortcut-dot lrt"></span>Pasar Seni
           </button>
-          <button class="hub-chip-btn" (click)="selectQuickStation('Bukit Bintang')">
-            <span class="hub-dot mrt"></span>Bukit Bintang
+          <button class="shortcut-pill" (click)="selectQuickStation('Bukit Bintang')">
+            <span class="shortcut-dot mrt"></span>Bukit Bintang
           </button>
-          <button class="hub-chip-btn" (click)="selectQuickStation('Masjid Jamek')">
-            <span class="hub-dot lrt"></span>Masjid Jamek
+          <button class="shortcut-pill" (click)="selectQuickStation('Masjid Jamek')">
+            <span class="shortcut-dot lrt"></span>Masjid Jamek
           </button>
-          <button class="hub-chip-btn" (click)="selectQuickStation('Merdeka')">
-            <span class="hub-dot mrt"></span>Merdeka
+          <button class="shortcut-pill" (click)="selectQuickStation('Merdeka')">
+            <span class="shortcut-dot mrt"></span>Merdeka
           </button>
-          <button class="hub-chip-btn" (click)="selectQuickStation('TRX')">
-            <span class="hub-dot mrt"></span>Tun Razak Exchange
+          <button class="shortcut-pill" (click)="selectQuickStation('TRX')">
+            <span class="shortcut-dot mrt"></span>TRX
           </button>
         </div>
       </div>

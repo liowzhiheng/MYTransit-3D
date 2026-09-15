@@ -1,86 +1,38 @@
-<header class="ops-header">
+<header class="apple-header">
   <div class="header-left">
-    <button class="icon-toggle-btn" (click)="toggleLeftPanel.emit()" title="Toggle Network Overview (Left Panel)">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
+    <button class="nav-control-btn" (click)="toggleLeftPanel.emit()" title="Toggle Network Directory" aria-label="Toggle Network Directory">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
       </svg>
     </button>
 
-    <div class="brand-cluster">
-      <div class="brand-title-row">
-        <span class="brand-radar-icon"></span>
-        <h1 class="brand-title">MYTransit <span class="accent-3d">3D</span></h1>
-        <span class="badge-ops font-mono">OPS-CTR</span>
+    <div class="brand-group">
+      <div class="brand-name-row">
+        <span class="status-indicator-dot" title="Network Connected"></span>
+        <h1 class="brand-title">MYTransit <span class="brand-accent">3D</span></h1>
       </div>
-      <p class="brand-subtitle">Malaysia Interactive Transit & Urban Digital Twin</p>
-    </div>
-  </div>
-
-  <div class="header-center">
-    <div class="telemetry-bar">
-      <div class="telemetry-item">
-        <span class="telemetry-label">SYSTEM</span>
-        <span class="status-pill status-live">
-          <span class="pulse-dot"></span>
-          <span>ONLINE</span>
-        </span>
-      </div>
-
-      <div class="telemetry-divider"></div>
-
-      <div class="telemetry-item">
-        <span class="telemetry-label">GEOSPATIAL</span>
-        <span class="status-pill status-live">
-          <span class="pulse-dot"></span>
-          <span>3D TWIN</span>
-        </span>
-      </div>
-
-      <div class="telemetry-divider"></div>
-
-      <div class="telemetry-item">
-        <span class="telemetry-label">TELEMETRY</span>
-        <span *ngIf="isConnected$ | async; else scheduledPill" class="status-pill status-live">
-          <span class="pulse-dot"></span>
-          <span>LIVE ({{ (vehicles$ | async)?.length || 0 }})</span>
-        </span>
-        <ng-template #scheduledPill>
-          <span class="status-pill status-scheduled">
-            <span>SCHEDULED</span>
-          </span>
-        </ng-template>
-        <button
-          class="poll-toggle-btn font-mono"
-          (click)="realtimeData.togglePolling()"
-          [title]="(isPolling$ | async) ? 'Pause real-time telemetry polling' : 'Resume real-time telemetry polling'"
-        >
-          {{ (isPolling$ | async) ? '⏸' : '▶' }}
-        </button>
-      </div>
-
-      <div class="telemetry-divider"></div>
-
-      <button class="telemetry-item-btn" (click)="openDataSources.emit()" title="View Data Sources & System Architecture">
-        <span class="telemetry-label">DATA SOURCE</span>
-        <span class="status-pill status-live">
-          <span class="pulse-dot"></span>
-          <span>OPEN DATA</span>
-        </span>
-      </button>
+      <span class="brand-subtext">Klang Valley Spatial Transit Twin</span>
     </div>
   </div>
 
   <div class="header-right">
-    <div class="clock-display font-mono">
+    <button class="source-pill-btn" (click)="openDataSources.emit()" title="View Open Data Architecture & Specifications">
+      <span class="source-label">Data Sources</span>
+      <span class="source-badge">Open Data</span>
+    </button>
+
+    <div class="header-divider"></div>
+
+    <div class="clock-block font-mono">
       <div class="clock-time">{{ currentTime() }} <span class="clock-tz">MYT</span></div>
       <div class="clock-date">{{ currentDate() }}</div>
     </div>
 
-    <button class="icon-toggle-btn" (click)="toggleRightPanel.emit()" title="Toggle Station Inspector (Right Panel)">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+    <button class="nav-control-btn" (click)="toggleRightPanel.emit()" title="Toggle Station Inspector" aria-label="Toggle Station Inspector">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="4" ry="4"></rect>
         <line x1="15" y1="3" x2="15" y2="21"></line>
       </svg>
     </button>

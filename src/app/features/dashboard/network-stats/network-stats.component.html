@@ -1,63 +1,36 @@
-<footer class="ops-footer">
-  <div class="footer-stats-group">
-    <div class="stat-cell">
-      <span class="stat-k font-mono">ACTIVE LINES</span>
-      <span class="stat-v font-mono">
-        {{ stats ? (stats.activeLines < 10 ? '0' + stats.activeLines : stats.activeLines) : '10' }}
-        <span class="stat-unit">CORRIDORS</span>
+<footer class="apple-status-dock">
+  <div class="status-capsule">
+    <div class="status-metric">
+      <span class="metric-num">{{ stats?.activeLines || '10' }}</span>
+      <span class="metric-lbl">Lines</span>
+    </div>
+
+    <span class="capsule-divider"></span>
+
+    <div class="status-metric">
+      <span class="metric-num">{{ stats?.totalStations || '191' }}</span>
+      <span class="metric-lbl">Stations</span>
+    </div>
+
+    <span class="capsule-divider"></span>
+
+    <div class="status-metric">
+      <span class="metric-num font-mono">
+        <span *ngIf="vehiclesCount !== null && vehiclesCount > 0; else dashVehicles">{{ vehiclesCount }}</span>
+        <ng-template #dashVehicles>--</ng-template>
       </span>
+      <span class="metric-lbl">{{ isRealtime ? 'Live GPS' : 'Active Trains' }}</span>
     </div>
 
-    <div class="stat-separator"></div>
+    <span class="capsule-divider"></span>
 
-    <div class="stat-cell">
-      <span class="stat-k font-mono">TOTAL STATIONS</span>
-      <span class="stat-v font-mono">{{ stats?.totalStations || '190+' }}</span>
+    <div class="status-indicator-group">
+      <span class="status-dot-pulse"></span>
+      <span class="status-text">{{ stats?.networkStatus || 'Operational' }}</span>
     </div>
 
-    <div class="stat-separator"></div>
+    <span class="capsule-divider"></span>
 
-    <div class="stat-cell">
-      <span class="stat-k font-mono">VEHICLES</span>
-      <span *ngIf="isRealtime && vehiclesCount !== null; else scheduledVehicles" class="stat-v font-mono" style="color: var(--emerald-live);">
-        {{ vehiclesCount < 10 ? '0' + vehiclesCount : vehiclesCount }} <span class="stat-unit">LIVE</span>
-      </span>
-      <ng-template #scheduledVehicles>
-        <span *ngIf="vehiclesCount !== null && vehiclesCount > 0; else noVehicles" class="stat-v font-mono" style="color: #38bdf8;">
-          {{ vehiclesCount < 10 ? '0' + vehiclesCount : vehiclesCount }} <span class="stat-unit">ACTIVE (EST)</span>
-        </span>
-        <ng-template #noVehicles>
-          <span class="stat-v font-mono text-muted">-- <span class="stat-unit">(SCHEDULED)</span></span>
-        </ng-template>
-      </ng-template>
-    </div>
-
-    <div class="stat-separator"></div>
-
-    <div class="stat-cell">
-      <span class="stat-k font-mono">NETWORK STATUS</span>
-      <span class="status-pill status-live">
-        <span class="pulse-dot"></span>
-        <span>{{ stats?.networkStatus || 'NOMINAL' }}</span>
-      </span>
-    </div>
-  </div>
-
-  <div class="footer-telemetry-group font-mono">
-    <div *ngIf="cameraState" class="telemetry-readout">
-      <span class="geo-tag">CAM:</span>
-      <span>{{ cameraState.center[1] }}°N, {{ cameraState.center[0] }}°E</span>
-      <span class="telemetry-sep">|</span>
-      <span>Z:{{ cameraState.zoom }}</span>
-      <span class="telemetry-sep">|</span>
-      <span>PITCH:{{ cameraState.pitch }}°</span>
-      <span class="telemetry-sep">|</span>
-      <span>HDG:{{ cameraState.bearing }}°</span>
-      <span class="mode-badge-footer" [class.mode-3d]="is3D">{{ is3D ? '3D' : '2D' }}</span>
-    </div>
-
-    <div class="attribution-link">
-      <span>SOURCE: data.gov.my / OSM</span>
-    </div>
+    <span class="provenance-tag">data.gov.my</span>
   </div>
 </footer>

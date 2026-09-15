@@ -6,23 +6,23 @@
 .search-input-bar {
   display: flex;
   align-items: center;
-  background: rgba(8, 14, 26, 0.85);
-  border: 1px solid var(--border-panel);
-  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid var(--apple-glass-border);
+  border-radius: var(--apple-radius-control);
   padding: 0 10px;
-  transition: all 0.2s ease;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
 }
 
 .search-input-bar:focus-within,
 .search-input-bar.focused {
-  border-color: var(--cyan-primary);
-  box-shadow: 0 0 14px var(--cyan-glow);
-  background: rgba(11, 20, 38, 0.95);
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 0 3px var(--apple-blue-subtle);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .search-icon {
-  color: var(--text-muted);
+  color: var(--apple-text-tertiary);
   margin-right: 8px;
   flex-shrink: 0;
 }
@@ -32,59 +32,56 @@
   background: transparent;
   border: none;
   outline: none;
-  color: var(--text-white);
-  font-size: 12px;
+  color: var(--apple-text-primary);
+  font-size: 12.5px;
   padding: 8px 0;
+  font-family: inherit;
 }
 
 .search-input::placeholder {
-  color: var(--text-muted);
+  color: var(--apple-text-tertiary);
 }
 
 .clear-btn {
   background: transparent;
   border: none;
-  color: var(--text-muted);
+  color: var(--apple-text-tertiary);
   cursor: pointer;
   padding: 2px 6px;
-  border-radius: 3px;
-  font-size: 12px;
+  border-radius: 4px;
+  font-size: 11px;
   margin-right: 4px;
+  transition: color 0.15s;
 }
 
 .clear-btn:hover {
-  color: var(--text-white);
-  background: rgba(255, 255, 255, 0.1);
+  color: var(--apple-text-primary);
 }
 
 .search-hint {
   font-size: 10px;
-  color: var(--text-muted);
+  color: var(--apple-text-tertiary);
   background: rgba(255, 255, 255, 0.08);
   padding: 2px 6px;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
   flex-shrink: 0;
 }
 
-.search-hint:hover {
-  color: var(--cyan-primary);
-  background: rgba(0, 242, 254, 0.15);
-}
-
-/* Dropdown */
+/* Apple Spotlight Dropdown */
 .search-dropdown {
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
   width: 100%;
-  background: rgba(11, 18, 32, 0.96);
+  background: rgba(26, 26, 32, 0.94);
   backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border-panel);
-  border-radius: 8px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--apple-glass-border-hover);
+  border-radius: var(--apple-radius-card);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
   z-index: 50;
-  max-height: 380px;
+  max-height: 360px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -94,66 +91,72 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-  font-size: 9px;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
+  padding: 10px 12px 6px 12px;
+  font-size: 10px;
+  color: var(--apple-text-tertiary);
+  font-weight: 500;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-hint {
-  font-size: 9px;
-  opacity: 0.7;
+  font-size: 9.5px;
+  color: var(--apple-text-tertiary);
 }
 
 .results-list {
   list-style: none;
-  padding: 4px 0;
   margin: 0;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .result-item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  padding: 8px 12px;
-  cursor: pointer;
-  gap: 4px;
-  transition: all 0.15s ease;
-  border-left: 2px solid transparent;
+  gap: 3px;
+  transition: background 0.14s ease;
 }
 
 .result-item:hover,
 .result-item.selected {
-  background: rgba(0, 242, 254, 0.12);
-  border-left-color: var(--cyan-primary);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.result-item.selected {
+  background: var(--apple-blue-subtle);
 }
 
 .result-main-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .station-name-text {
   font-size: 13px;
-  font-weight: 600;
-  color: var(--text-white);
+  font-weight: 500;
+  color: var(--apple-text-primary);
 }
 
 .station-code-pill {
-  font-size: 10px;
-  background: rgba(0, 242, 254, 0.15);
-  color: var(--cyan-primary);
+  font-size: 9.5px;
+  font-weight: 600;
   padding: 1px 5px;
-  border-radius: 3px;
-  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--apple-text-secondary);
 }
 
 .result-sub-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 10px;
 }
 
 .mode-pills {
@@ -162,29 +165,32 @@
 }
 
 .mode-pill {
-  font-size: 8px;
-  font-weight: 700;
+  font-size: 9px;
+  font-weight: 600;
   color: #fff;
   padding: 1px 4px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .lines-text {
-  color: var(--text-muted);
+  font-size: 11px;
+  color: var(--apple-text-tertiary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex: 1;
 }
 
-/* Empty State */
 .empty-dropdown {
-  padding: 16px 12px;
+  padding: 16px;
   text-align: center;
-  font-size: 11px;
-  color: var(--text-muted);
+}
+
+.empty-state-text {
+  font-size: 12px;
+  color: var(--apple-text-secondary);
 }
 
 .query-highlight {
-  color: var(--cyan-primary);
+  color: var(--apple-text-primary);
+  font-weight: 600;
 }

@@ -2,10 +2,10 @@
   <div class="modal-window">
     <div class="modal-header">
       <div class="header-brand-row">
-        <span class="radar-dot"></span>
-        <h2 class="modal-title font-mono">DATA PROVENANCE & ARCHITECTURAL TELEMETRY</h2>
+        <span class="status-indicator-dot"></span>
+        <h2 class="modal-title">Data Sources & System Architecture</h2>
       </div>
-      <button class="close-icon-btn" (click)="closeModal.emit()" title="Close Dialog">
+      <button class="close-icon-btn" (click)="closeModal.emit()" title="Close" aria-label="Close">
         ✕
       </button>
     </div>
@@ -13,38 +13,38 @@
     <div class="modal-body">
       <!-- Section 1: Overview Banner -->
       <div class="overview-banner">
-        <div class="banner-badge font-mono">100% STATIC ARCHITECTURE</div>
+        <div class="banner-badge">Serverless Architecture</div>
         <p class="banner-text">
-          MYTransit 3D runs entirely client-side as a serverless static web application deployed on <strong>GitHub Pages</strong>.
-          Transit datasets are ingested from official Malaysian government endpoints, normalized into logical stations,
-          and rendered dynamically using WebGL vector tiles.
+          MYTransit 3D runs entirely client-side as a static web application deployed on <strong>GitHub Pages</strong>.
+          Transit corridors and stations are ingested from official Malaysian government open data endpoints, normalized,
+          and rendered interactively using WebGL vector tiles.
         </p>
       </div>
 
       <!-- Section 2: Data Sources Grid -->
-      <div class="section-heading font-mono">INGESTED DATASETS</div>
+      <div class="section-heading">Ingested Datasets</div>
       <div class="sources-grid">
         <!-- Card 1: data.gov.my -->
         <div class="source-card">
           <div class="card-top">
-            <span class="provider-tag font-mono">GOVERNMENT PORTAL</span>
-            <span class="status-pill status-live font-mono">SYNCHRONIZED</span>
+            <span class="provider-tag">Government Portal</span>
+            <span class="status-pill status-live">Synchronized</span>
           </div>
           <h3 class="source-title">data.gov.my Open API</h3>
           <p class="source-desc">
             Official Malaysia open data portal by Jabatan Digital Negara & Ministry of Transport.
           </p>
-          <div class="card-meta font-mono">
+          <div class="card-meta">
             <div class="meta-row">
-              <span class="meta-k">ENDPOINT</span>
-              <span class="meta-v">api.data.gov.my/gtfs-static</span>
+              <span class="meta-k">Endpoint</span>
+              <span class="meta-v font-mono">api.data.gov.my/gtfs-static</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">LICENSE</span>
+              <span class="meta-k">License</span>
               <span class="meta-v">Open Government Licence (OGL-MY)</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">UPDATE CYCLE</span>
+              <span class="meta-k">Update Cycle</span>
               <span class="meta-v">Daily automated at 00:01 MYT</span>
             </div>
           </div>
@@ -53,25 +53,25 @@
         <!-- Card 2: Prasarana Malaysia -->
         <div class="source-card">
           <div class="card-top">
-            <span class="provider-tag font-mono">TRANSIT OPERATOR</span>
-            <span class="status-pill status-live font-mono">ACTIVE</span>
+            <span class="provider-tag">Transit Operator</span>
+            <span class="status-pill status-live">Active</span>
           </div>
           <h3 class="source-title">Prasarana Rapid Rail & Bus</h3>
           <p class="source-desc">
             MRT Kajang, MRT Putrajaya, LRT Kelana Jaya, LRT Ampang, LRT Sri Petaling, and KL Monorail network geometry.
           </p>
-          <div class="card-meta font-mono">
+          <div class="card-meta">
             <div class="meta-row">
-              <span class="meta-k">CATEGORY</span>
-              <span class="meta-v">rapid-rail-kl</span>
+              <span class="meta-k">Category</span>
+              <span class="meta-v font-mono">rapid-rail-kl</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">SHAPES</span>
+              <span class="meta-k">Shapes</span>
               <span class="meta-v">7,280+ High-Precision Points</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">TIMETABLES</span>
-              <span class="meta-v">Peak 3-4 min / Off-Peak 6-8 min</span>
+              <span class="meta-k">Timetables</span>
+              <span class="meta-v">Peak 3–4 min / Off-Peak 6–8 min</span>
             </div>
           </div>
         </div>
@@ -79,24 +79,24 @@
         <!-- Card 3: KTMB -->
         <div class="source-card">
           <div class="card-top">
-            <span class="provider-tag font-mono">NATIONAL RAILWAY</span>
-            <span class="status-pill status-live font-mono">ACTIVE</span>
+            <span class="provider-tag">National Railway</span>
+            <span class="status-pill status-live">Active</span>
           </div>
           <h3 class="source-title">Keretapi Tanah Melayu (KTMB)</h3>
           <p class="source-desc">
             KTM Komuter Klang Valley lines (Batu Caves – Pulau Sebang & Tanjung Malim – Port Klang).
           </p>
-          <div class="card-meta font-mono">
+          <div class="card-meta">
             <div class="meta-row">
-              <span class="meta-k">CATEGORY</span>
-              <span class="meta-v">ktmb (GTFS Static)</span>
+              <span class="meta-k">Category</span>
+              <span class="meta-v font-mono">ktmb (GTFS Static)</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">CORRIDORS</span>
-              <span class="meta-v">KC05_KB18 & KA15_KD19</span>
+              <span class="meta-k">Corridors</span>
+              <span class="meta-v font-mono">KC05_KB18 & KA15_KD19</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">COVERAGE</span>
+              <span class="meta-k">Coverage</span>
               <span class="meta-v">Klang Valley Sector</span>
             </div>
           </div>
@@ -105,37 +105,37 @@
         <!-- Card 4: OpenFreeMap & OSM -->
         <div class="source-card">
           <div class="card-top">
-            <span class="provider-tag font-mono">GEOSPATIAL BASE</span>
-            <span class="status-pill status-live font-mono">ONLINE</span>
+            <span class="provider-tag">Geospatial Base</span>
+            <span class="status-pill status-live">Online</span>
           </div>
           <h3 class="source-title">OpenFreeMap & OpenStreetMap</h3>
           <p class="source-desc">
-            Open-source vector tiles providing landcover, road hierarchy, water polygons, and 3D building heights.
+            Vector tiles providing landcover, road hierarchy, water polygons, and 3D building heights.
           </p>
-          <div class="card-meta font-mono">
+          <div class="card-meta">
             <div class="meta-row">
-              <span class="meta-k">3D BUILDINGS</span>
-              <span class="meta-v">fill-extrusion (render_height)</span>
+              <span class="meta-k">3D Buildings</span>
+              <span class="meta-v font-mono">fill-extrusion (render_height)</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">LICENSE</span>
+              <span class="meta-k">License</span>
               <span class="meta-v">ODbL © OpenStreetMap contributors</span>
             </div>
             <div class="meta-row">
-              <span class="meta-k">API KEY REQ</span>
+              <span class="meta-k">API Requirement</span>
               <span class="meta-v">Zero keys / Open source</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Section 3: Realtime Status & Phase 5 Readiness -->
-      <div class="section-heading font-mono">REAL-TIME SERVICE READINESS (RULE 15 & 21)</div>
-      <div class="realtime-status-table font-mono">
+      <!-- Section 3: Realtime Status -->
+      <div class="section-heading">Service Connectivity Status</div>
+      <div class="realtime-status-table">
         <div class="rt-row">
           <div class="rt-col-agency">KTMB Vehicle GPS</div>
           <div class="rt-col-status">
-            <span class="status-pill status-live">READY FOR PHASE 5</span>
+            <span class="status-pill status-live">Active / GTFS-RT</span>
           </div>
           <div class="rt-col-note">Live GTFS-RT feed verified on data.gov.my</div>
         </div>
@@ -143,7 +143,7 @@
         <div class="rt-row">
           <div class="rt-col-agency">Rapid Bus GPS</div>
           <div class="rt-col-status">
-            <span class="status-pill status-live">READY FOR PHASE 5</span>
+            <span class="status-pill status-live">Active / GTFS-RT</span>
           </div>
           <div class="rt-col-note">Live fleet tracking endpoint available</div>
         </div>
@@ -151,19 +151,19 @@
         <div class="rt-row">
           <div class="rt-col-agency">Rapid Rail (MRT/LRT)</div>
           <div class="rt-col-status">
-            <span class="status-pill status-offline">STATIC SCHEDULE ONLY</span>
+            <span class="status-pill status-scheduled">Scheduled Interpolation</span>
           </div>
-          <div class="rt-col-note">Prasarana public realtime API not yet published; calculated timetable used</div>
+          <div class="rt-col-note">High-frequency timetable headway simulation active (Rule 15 compliant)</div>
         </div>
       </div>
     </div>
 
-    <div class="modal-footer font-mono">
+    <div class="modal-footer">
       <div class="footer-meta" *ngIf="metadata$ | async as meta">
-        LAST PIPELINE RUN: {{ meta.generatedAt | date:'yyyy-MM-dd HH:mm:ss' }} UTC
+        Pipeline Build: {{ meta.generatedAt | date:'yyyy-MM-dd HH:mm:ss' }} UTC
       </div>
       <button class="footer-close-btn" (click)="closeModal.emit()">
-        DISMISS TELEMETRY
+        Done
       </button>
     </div>
   </div>

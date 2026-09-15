@@ -1,102 +1,78 @@
-.ops-footer {
-  height: var(--footer-height);
-  background: var(--bg-panel);
+.apple-status-dock {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  pointer-events: none;
+}
+
+.status-capsule {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--apple-glass);
   backdrop-filter: var(--glass-blur);
-  border-top: var(--glass-border);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--apple-glass-border);
+  box-shadow: var(--apple-glass-shadow);
+  border-radius: var(--apple-radius-pill);
+  padding: 6px 16px;
+  user-select: none;
+}
+
+.status-metric {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  position: relative;
-  z-index: 20;
+  align-items: baseline;
+  gap: 5px;
 }
 
-.footer-stats-group {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.stat-cell {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.stat-k {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-}
-
-.stat-v {
-  font-size: 11px;
+.metric-num {
+  font-size: 12.5px;
   font-weight: 600;
-  color: var(--text-white);
+  color: var(--apple-text-primary);
 }
 
-.stat-unit {
-  font-size: 9px;
-  color: var(--text-muted);
+.metric-lbl {
+  font-size: 11px;
+  color: var(--apple-text-tertiary);
 }
 
-.stat-separator {
+.capsule-divider {
   width: 1px;
-  height: 14px;
-  background: var(--border-subtle);
+  height: 12px;
+  background: var(--apple-glass-border);
 }
 
-.footer-telemetry-group {
+.status-indicator-group {
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-size: 10px;
-  color: var(--text-secondary);
+  gap: 6px;
 }
 
-.telemetry-readout {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(8, 14, 26, 0.6);
-  padding: 2px 8px;
-  border-radius: 4px;
-  border: 1px solid var(--border-subtle);
+.status-dot-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--apple-green);
+  box-shadow: 0 0 6px rgba(48, 209, 88, 0.4);
 }
 
-.geo-tag {
-  color: var(--cyan-primary);
-  font-weight: 700;
+.status-text {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--apple-text-secondary);
 }
 
-.telemetry-sep {
-  color: var(--border-subtle);
+.provenance-tag {
+  font-size: 10.5px;
+  color: var(--apple-text-tertiary);
+  font-family: var(--font-mono);
 }
 
-.mode-badge-footer {
-  padding: 1px 4px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.1);
-  font-weight: 700;
-  font-size: 9px;
-}
-
-.mode-badge-footer.mode-3d {
-  background: rgba(0, 242, 254, 0.2);
-  color: var(--cyan-primary);
-}
-
-.attribution-link {
-  color: var(--text-muted);
-  font-size: 10px;
-}
-
-@media (max-width: 1000px) {
-  .stat-cell:nth-child(n+5) {
-    display: none;
-  }
-  .telemetry-readout {
+@media (max-width: 768px) {
+  .apple-status-dock {
     display: none;
   }
 }

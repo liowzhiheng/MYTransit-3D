@@ -1,140 +1,141 @@
-<aside class="network-sidebar" [class.panel-collapsed]="!isOpen">
-  <div class="panel-header">
-    <div class="header-badge-row">
-      <span class="section-tag font-mono">SECTOR // KLANG VALLEY</span>
-      <button class="close-btn" (click)="closePanel.emit()" title="Minimize Panel">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<aside class="apple-sidebar" [class.panel-collapsed]="!isOpen">
+  <div class="sidebar-header">
+    <div class="sidebar-title-row">
+      <div class="header-text-group">
+        <h2 class="sidebar-title">Network Directory</h2>
+        <span class="sidebar-subtitle">Klang Valley Transit Corridors</span>
+      </div>
+      <button class="panel-close-btn" (click)="closePanel.emit()" title="Hide Sidebar" aria-label="Hide Sidebar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
     </div>
-    <h2 class="section-title">Network Directory</h2>
   </div>
 
-  <!-- Search Input Autocomplete -->
-  <div class="search-container">
-    <app-station-search (stationSelected)="onStationSelected($event)"></app-station-search>
-  </div>
-
-  <!-- Mode Filter Pills with live counts -->
-  <div class="filter-section" *ngIf="modeCounts$ | async as counts">
-    <div class="filter-title font-mono">TRANSIT MODES</div>
-    <div class="mode-chips">
-      <button
-        class="mode-chip"
-        [class.active]="(activeMode$ | async) === 'ALL'"
-        (click)="setModeFilter('ALL')"
-      >
-        <span>ALL MODES</span>
-        <span class="chip-count font-mono">{{ counts.ALL }}</span>
-      </button>
-
-      <button
-        class="mode-chip"
-        [class.active]="(activeMode$ | async) === 'MRT'"
-        (click)="setModeFilter('MRT')"
-      >
-        <span>MRT</span>
-        <span class="chip-count font-mono">{{ counts.MRT }}</span>
-      </button>
-
-      <button
-        class="mode-chip"
-        [class.active]="(activeMode$ | async) === 'LRT'"
-        (click)="setModeFilter('LRT')"
-      >
-        <span>LRT</span>
-        <span class="chip-count font-mono">{{ counts.LRT }}</span>
-      </button>
-
-      <button
-        class="mode-chip"
-        [class.active]="(activeMode$ | async) === 'MONORAIL'"
-        (click)="setModeFilter('MONORAIL')"
-      >
-        <span>MONORAIL</span>
-        <span class="chip-count font-mono">{{ counts.MONORAIL }}</span>
-      </button>
-
-      <button
-        class="mode-chip"
-        [class.active]="(activeMode$ | async) === 'KTM'"
-        (click)="setModeFilter('KTM')"
-      >
-        <span>KTM</span>
-        <span class="chip-count font-mono">{{ counts.KTM }}</span>
-      </button>
-
-      <button
-        class="mode-chip"
-        [class.active]="(activeMode$ | async) === 'BUS'"
-        (click)="setModeFilter('BUS')"
-      >
-        <span>BUS / BRT</span>
-        <span class="chip-count font-mono">{{ counts.BUS }}</span>
-      </button>
+  <div class="sidebar-scrollable">
+    <!-- Spotlight Search Bar -->
+    <div class="search-section">
+      <app-station-search (stationSelected)="onStationSelected($event)"></app-station-search>
     </div>
-  </div>
 
-  <!-- Quick Strategic Hubs Fly-To -->
-  <div class="quick-hubs-section">
-    <div class="filter-title font-mono">STRATEGIC HUBS (FLY-TO)</div>
-    <div class="hubs-grid">
-      <button
-        *ngFor="let hub of quickHubs"
-        class="hub-btn"
-        (click)="onHubClick(hub)"
-        title="Fly camera to {{ hub.name }}"
-      >
-        <div class="hub-name font-mono">{{ hub.name }}</div>
-        <div class="hub-desc">{{ hub.desc }}</div>
-      </button>
-    </div>
-  </div>
+    <!-- Mode Filter Segmented Control -->
+    <div class="filter-section" *ngIf="modeCounts$ | async as counts">
+      <div class="section-heading">Transit Modes</div>
+      <div class="segmented-control">
+        <button
+          class="segment-pill"
+          [class.active]="(activeMode$ | async) === 'ALL'"
+          (click)="setModeFilter('ALL')"
+        >
+          <span>All</span>
+          <span class="pill-count">{{ counts.ALL }}</span>
+        </button>
 
-  <!-- Real Arterial Lines List -->
-  <div class="lines-section" *ngIf="filteredRoutes$ | async as routes">
-    <div class="filter-title font-mono">ACTIVE ARTERIAL CORRIDORS ({{ routes.length }})</div>
+        <button
+          class="segment-pill"
+          [class.active]="(activeMode$ | async) === 'MRT'"
+          (click)="setModeFilter('MRT')"
+        >
+          <span>MRT</span>
+          <span class="pill-count">{{ counts.MRT }}</span>
+        </button>
 
-    <!-- Active Corridor HUD Notification -->
-    <div *ngIf="selectedRoute$ | async as selectedRoute" class="corridor-active-hud">
-      <div class="hud-top-row font-mono">
-        <span class="hud-tag">CORRIDOR ISOLATED</span>
-        <button class="hud-clear-btn" (click)="clearLineFilter()" title="Clear corridor filter">
-          ✕ RESET
+        <button
+          class="segment-pill"
+          [class.active]="(activeMode$ | async) === 'LRT'"
+          (click)="setModeFilter('LRT')"
+        >
+          <span>LRT</span>
+          <span class="pill-count">{{ counts.LRT }}</span>
+        </button>
+
+        <button
+          class="segment-pill"
+          [class.active]="(activeMode$ | async) === 'MONORAIL'"
+          (click)="setModeFilter('MONORAIL')"
+        >
+          <span>Monorail</span>
+          <span class="pill-count">{{ counts.MONORAIL }}</span>
+        </button>
+
+        <button
+          class="segment-pill"
+          [class.active]="(activeMode$ | async) === 'KTM'"
+          (click)="setModeFilter('KTM')"
+        >
+          <span>KTM</span>
+          <span class="pill-count">{{ counts.KTM }}</span>
+        </button>
+
+        <button
+          class="segment-pill"
+          [class.active]="(activeMode$ | async) === 'BUS'"
+          (click)="setModeFilter('BUS')"
+        >
+          <span>Bus</span>
+          <span class="pill-count">{{ counts.BUS }}</span>
         </button>
       </div>
-      <div class="hud-corridor-name" [style.color]="selectedRoute.color">
-        {{ selectedRoute.name }}
-      </div>
-      <p class="hud-corridor-desc font-mono" *ngIf="selectedRoute.description">
-        {{ selectedRoute.description }}
-      </p>
     </div>
 
-    <div class="lines-list">
-      <div
-        *ngFor="let line of routes"
-        class="line-card"
-        [class.line-selected]="(activeLineId$ | async) === line.id"
-        (click)="toggleLineFilter(line.id)"
-        title="Click to isolate {{ line.name }}"
-      >
-        <div class="line-color-bar" [style.background-color]="line.color"></div>
-        <div class="line-info">
-          <div class="line-header">
-            <span class="line-badge font-mono" [style.background-color]="line.color" [style.color]="line.textColor || '#fff'">
-              {{ line.shortName || line.id }}
-            </span>
-            <span class="line-name">{{ line.name }}</span>
-          </div>
-          <div class="line-footer font-mono">
-            <span class="line-stations">{{ line.mode }} CORRIDOR</span>
-            <span class="line-status status-live">
-              <span class="pulse-dot"></span>
-              ACTIVE
-            </span>
+    <!-- Strategic Hubs Cards -->
+    <div class="hubs-section">
+      <div class="section-heading">Strategic Hubs</div>
+      <div class="hubs-grid">
+        <button
+          *ngFor="let hub of quickHubs"
+          class="hub-card-btn"
+          (click)="onHubClick(hub)"
+          title="Fly camera to {{ hub.name }}"
+        >
+          <span class="hub-name">{{ hub.name }}</span>
+          <span class="hub-desc">{{ hub.desc }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Transit Lines List -->
+    <div class="lines-section" *ngIf="filteredRoutes$ | async as routes">
+      <div class="lines-header-row">
+        <span class="section-heading">Transit Corridors ({{ routes.length }})</span>
+        <button *ngIf="activeLineId$ | async" class="reset-pill-btn" (click)="clearLineFilter()" title="Clear corridor filter">
+          Reset Filter
+        </button>
+      </div>
+
+      <!-- Active Corridor Isolation Card -->
+      <div *ngIf="selectedRoute$ | async as selectedRoute" class="active-isolation-card">
+        <div class="isolation-top">
+          <span class="isolation-badge" [style.background-color]="selectedRoute.color">Isolated</span>
+          <span class="isolation-name">{{ selectedRoute.name }}</span>
+        </div>
+        <p class="isolation-desc" *ngIf="selectedRoute.description">
+          {{ selectedRoute.description }}
+        </p>
+      </div>
+
+      <div class="lines-list">
+        <div
+          *ngFor="let line of routes"
+          class="line-card-item"
+          [class.line-selected]="(activeLineId$ | async) === line.id"
+          (click)="toggleLineFilter(line.id)"
+          title="Filter map to {{ line.name }}"
+        >
+          <div class="line-indicator-bar" [style.background-color]="line.color"></div>
+          <div class="line-card-content">
+            <div class="line-card-title-row">
+              <span class="line-badge font-mono" [style.background-color]="line.color" [style.color]="line.textColor || '#fff'">
+                {{ line.shortName || line.id }}
+              </span>
+              <span class="line-name-text">{{ line.name }}</span>
+            </div>
+            <div class="line-card-meta-row">
+              <span class="line-mode-tag">{{ line.mode }} Corridor</span>
+              <span class="line-operational-dot" title="Operational"></span>
+            </div>
           </div>
         </div>
       </div>

@@ -1,202 +1,174 @@
-.ops-header {
+.apple-header {
   height: var(--header-height);
-  background: var(--bg-panel);
+  background: var(--apple-glass);
   backdrop-filter: var(--glass-blur);
-  border-bottom: var(--glass-border);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--apple-glass-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
   position: relative;
-  z-index: 20;
+  z-index: 30;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  user-select: none;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.brand-cluster {
+.nav-control-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--apple-glass-border);
+  color: var(--apple-text-secondary);
+  border-radius: var(--apple-radius-control);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-control-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--apple-text-primary);
+  border-color: var(--apple-glass-border-hover);
+  transform: scale(1.02);
+}
+
+.nav-control-btn:active {
+  transform: scale(0.96);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.brand-group {
   display: flex;
   flex-direction: column;
+  gap: 1px;
 }
 
-.brand-title-row {
+.brand-name-row {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.brand-radar-icon {
-  width: 10px;
-  height: 10px;
+.status-indicator-dot {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--cyan-primary);
-  box-shadow: 0 0 10px var(--cyan-primary);
+  background-color: var(--apple-green);
+  box-shadow: 0 0 8px rgba(48, 209, 88, 0.5);
   display: inline-block;
 }
 
 .brand-title {
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-white);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--apple-text-primary);
   line-height: 1.2;
 }
 
-.accent-3d {
-  color: var(--cyan-primary);
-  font-weight: 800;
-}
-
-.badge-ops {
-  font-size: 10px;
+.brand-accent {
+  color: var(--apple-blue);
   font-weight: 700;
-  padding: 1px 6px;
-  background: rgba(0, 242, 254, 0.12);
-  color: var(--cyan-primary);
-  border: 1px solid rgba(0, 242, 254, 0.3);
-  border-radius: 3px;
-  letter-spacing: 0.06em;
 }
 
-.brand-subtitle {
+.brand-subtext {
   font-size: 11px;
-  color: var(--text-secondary);
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-.header-center {
-  display: flex;
-  align-items: center;
-}
-
-.telemetry-bar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: rgba(6, 11, 20, 0.6);
-  border: 1px solid var(--border-subtle);
-  border-radius: 6px;
-  padding: 4px 14px;
-}
-
-.telemetry-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.telemetry-item-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 2px 4px;
-  border-radius: 4px;
-  transition: all 0.2s;
-}
-
-.telemetry-item-btn:hover {
-  background: rgba(0, 242, 254, 0.1);
-}
-
-.poll-toggle-btn {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-dim);
-  cursor: pointer;
-  padding: 1px 5px;
-  border-radius: 3px;
-  font-size: 10px;
-  transition: all 0.2s;
-}
-
-.poll-toggle-btn:hover {
-  background: rgba(0, 242, 254, 0.2);
-  color: var(--cyan-primary);
-  border-color: var(--cyan-primary);
-}
-
-.telemetry-label {
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--text-muted);
-  letter-spacing: 0.05em;
-}
-
-.telemetry-value {
-  font-size: 11px;
-  color: var(--text-dim);
-}
-
-.telemetry-divider {
-  width: 1px;
-  height: 14px;
-  background: var(--border-subtle);
+  color: var(--apple-text-tertiary);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
-.clock-display {
+.source-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--apple-glass-border);
+  border-radius: var(--apple-radius-pill);
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--apple-text-primary);
+}
+
+.source-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--apple-glass-border-hover);
+  transform: scale(1.02);
+}
+
+.source-pill-btn:active {
+  transform: scale(0.98);
+}
+
+.source-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--apple-text-secondary);
+}
+
+.source-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--apple-radius-pill);
+  background: var(--apple-blue-subtle);
+  color: var(--apple-blue);
+  letter-spacing: -0.01em;
+}
+
+.header-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--apple-glass-border);
+}
+
+.clock-block {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  text-align: right;
+  line-height: 1.2;
 }
 
 .clock-time {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--cyan-primary);
-  letter-spacing: 0.05em;
-  line-height: 1.2;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--apple-text-primary);
+  letter-spacing: -0.02em;
 }
 
 .clock-tz {
   font-size: 10px;
-  color: var(--text-muted);
-  margin-left: 2px;
+  color: var(--apple-text-tertiary);
+  font-weight: 400;
 }
 
 .clock-date {
-  font-size: 10px;
-  color: var(--text-muted);
+  font-size: 10.5px;
+  color: var(--apple-text-tertiary);
+  letter-spacing: -0.01em;
 }
 
-.icon-toggle-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-dim);
-  border-radius: 6px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.icon-toggle-btn:hover {
-  background: rgba(0, 242, 254, 0.15);
-  border-color: rgba(0, 242, 254, 0.4);
-  color: var(--cyan-primary);
-}
-
-@media (max-width: 900px) {
-  .header-center {
+@media (max-width: 768px) {
+  .brand-subtext {
     display: none;
   }
-  .brand-subtitle {
+  .source-pill-btn .source-label {
     display: none;
   }
 }

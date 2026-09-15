@@ -1,31 +1,66 @@
 @import "maplibre-gl/dist/maplibre-gl.css";
 
 /* ==========================================================================
-   MYTransit 3D — Global Design Tokens & Operations Center Dark Theme
+   MYTransit 3D — Apple Maps & visionOS Dark Glass Design Tokens
    ========================================================================== */
 
 :root {
-  /* Color Palette: Deep Command Center Slates */
-  --bg-space: #05080e;
-  --bg-primary: #070c16;
-  --bg-secondary: #0e1726;
-  --bg-panel: rgba(11, 19, 34, 0.82);
-  --bg-panel-opaque: #0d1627;
-  --bg-card: rgba(18, 30, 52, 0.55);
-  --bg-card-hover: rgba(26, 42, 73, 0.7);
+  /* Apple Vision Dark Theme Surfaces */
+  --apple-bg: #0B0B0D;
+  --apple-surface: rgba(18, 18, 22, 0.78);
+  --apple-surface-elevated: rgba(28, 28, 34, 0.86);
+  --apple-glass: rgba(22, 22, 26, 0.72);
+  --apple-glass-hover: rgba(34, 34, 40, 0.82);
+  --apple-glass-active: rgba(44, 44, 52, 0.92);
+  --apple-glass-border: rgba(255, 255, 255, 0.09);
+  --apple-glass-border-hover: rgba(255, 255, 255, 0.18);
+  --apple-glass-border-active: rgba(255, 255, 255, 0.28);
+  --apple-glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --apple-card-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.06);
 
-  /* Accents & Status Indicators */
-  --cyan-primary: #00f2fe;
-  --cyan-glow: rgba(0, 242, 254, 0.25);
-  --blue-bright: #38bdf8;
-  --emerald-live: #10b981;
-  --emerald-glow: rgba(16, 185, 129, 0.25);
-  --amber-sched: #f59e0b;
-  --amber-glow: rgba(245, 158, 11, 0.25);
-  --rose-alert: #f43f5e;
-  --purple-accent: #a855f7;
+  /* Apple System Accents */
+  --apple-blue: #0A84FF;
+  --apple-blue-subtle: rgba(10, 132, 255, 0.15);
+  --apple-blue-hover: #0077ED;
+  --apple-green: #30D158;
+  --apple-green-subtle: rgba(48, 209, 88, 0.15);
+  --apple-orange: #FF9F0A;
+  --apple-orange-subtle: rgba(255, 159, 10, 0.15);
+  --apple-red: #FF453A;
+  --apple-red-subtle: rgba(255, 69, 58, 0.15);
+  --apple-purple: #BF5AF2;
 
-  /* Lines Color Palette (Klang Valley Transit) */
+  /* Typography Colors */
+  --apple-text-primary: #FFFFFF;
+  --apple-text-secondary: rgba(235, 235, 245, 0.65);
+  --apple-text-tertiary: rgba(235, 235, 245, 0.38);
+  --apple-text-quaternary: rgba(235, 235, 245, 0.2);
+
+  /* Radii */
+  --apple-radius-panel: 22px;
+  --apple-radius-card: 14px;
+  --apple-radius-control: 12px;
+  --apple-radius-pill: 9999px;
+
+  /* Backward Compatibility Aliases */
+  --bg-space: var(--apple-bg);
+  --bg-primary: #0E0E12;
+  --bg-secondary: #16161C;
+  --bg-panel: var(--apple-glass);
+  --bg-panel-opaque: #16161C;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+
+  --cyan-primary: var(--apple-blue);
+  --cyan-glow: rgba(10, 132, 255, 0.2);
+  --blue-bright: var(--apple-blue);
+  --emerald-live: var(--apple-green);
+  --emerald-glow: rgba(48, 209, 88, 0.2);
+  --amber-sched: var(--apple-orange);
+  --amber-glow: rgba(255, 159, 10, 0.2);
+  --rose-alert: var(--apple-red);
+
+  /* Transit Line Colors */
   --line-mrt-kajang: #008751;
   --line-mrt-putrajaya: #ffcd00;
   --line-lrt-kelanajaya: #e31837;
@@ -35,32 +70,30 @@
   --line-ktm: #004b87;
   --line-bus: #00bcd4;
 
-  /* Typography Colors */
-  --text-white: #f8fafc;
-  --text-dim: #cbd5e1;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-subtle: #475569;
+  --text-white: var(--apple-text-primary);
+  --text-dim: var(--apple-text-secondary);
+  --text-secondary: var(--apple-text-secondary);
+  --text-muted: var(--apple-text-tertiary);
+  --text-subtle: var(--apple-text-quaternary);
 
-  /* Borders & Glows */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(0, 242, 254, 0.35);
-  --border-panel: rgba(56, 189, 248, 0.15);
+  --border-subtle: var(--apple-glass-border);
+  --border-active: rgba(10, 132, 255, 0.4);
+  --border-panel: var(--apple-glass-border);
 
   /* Dimensions */
-  --header-height: 54px;
-  --footer-height: 38px;
-  --sidebar-width: 340px;
-  --station-panel-width: 360px;
+  --header-height: 58px;
+  --footer-height: 40px;
+  --sidebar-width: 350px;
+  --station-panel-width: 350px;
 
   /* Typography */
-  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", Menlo, Monaco, Consolas, monospace;
 
   /* Glassmorphism */
-  --glass-blur: blur(14px);
-  --glass-border: 1px solid var(--border-panel);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  --glass-blur: blur(24px) saturate(180%);
+  --glass-border: 1px solid var(--apple-glass-border);
+  --glass-shadow: var(--apple-glass-shadow);
 }
 
 *, *::before, *::after {
@@ -73,66 +106,66 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: var(--bg-space);
-  color: var(--text-white);
+  background-color: var(--apple-bg);
+  color: var(--apple-text-primary);
   font-family: var(--font-display);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 13.5px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbars */
+/* Subtle Apple macOS Scrollbars */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(10, 16, 28, 0.4);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(56, 189, 248, 0.25);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 242, 254, 0.5);
+  background: rgba(255, 255, 255, 0.28);
 }
 
-/* Monospace Badges & Technical Telemetry */
+/* Font Mono Utility */
 .font-mono {
   font-family: var(--font-mono);
+  letter-spacing: -0.02em;
 }
 
+/* Apple Status Pills */
 .status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 2px 8px;
-  border-radius: 4px;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: var(--apple-radius-pill);
   font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-family: var(--font-mono);
+  font-weight: 500;
+  line-height: 1;
 }
 
 .status-live {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--emerald-live);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  box-shadow: 0 0 8px var(--emerald-glow);
+  background: var(--apple-green-subtle);
+  color: var(--apple-green);
+  border: 1px solid rgba(48, 209, 88, 0.25);
 }
 
 .status-scheduled {
-  background: rgba(245, 158, 11, 0.15);
-  color: var(--amber-sched);
-  border: 1px solid rgba(245, 158, 11, 0.35);
+  background: var(--apple-orange-subtle);
+  color: var(--apple-orange);
+  border: 1px solid rgba(255, 159, 10, 0.25);
 }
 
 .status-offline {
-  background: rgba(100, 116, 139, 0.15);
-  color: var(--text-muted);
-  border: 1px solid rgba(100, 116, 139, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--apple-text-tertiary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .pulse-dot {
@@ -140,41 +173,37 @@ html, body {
   height: 6px;
   border-radius: 50%;
   background-color: currentColor;
-  animation: pulse-glow 2s infinite ease-in-out;
+  opacity: 0.9;
 }
 
-@keyframes pulse-glow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-/* MapLibre Attribution override for dark Ops aesthetic */
+/* MapLibre Attribution override for dark Apple aesthetic */
 .maplibregl-ctrl-attrib {
-  background-color: rgba(7, 12, 22, 0.75) !important;
-  color: var(--text-muted) !important;
+  background-color: rgba(14, 14, 18, 0.7) !important;
+  color: var(--apple-text-tertiary) !important;
   font-size: 10px !important;
-  backdrop-filter: blur(8px);
-  border-radius: 4px;
-  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(16px) !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 2px 8px !important;
 }
 .maplibregl-ctrl-attrib a {
-  color: var(--cyan-primary) !important;
+  color: var(--apple-text-secondary) !important;
   text-decoration: none;
 }
 .maplibregl-ctrl-attrib a:hover {
   text-decoration: underline;
 }
 
-/* Accessibility: High contrast focus-visible rings for keyboard navigability */
+/* Accessibility: Subtle focus-visible ring */
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--cyan-primary) !important;
+  outline: 2px solid var(--apple-blue) !important;
   outline-offset: 2px !important;
 }
 
-/* Reduced motion preference compliance (WCAG 2.1) */
+/* Reduced motion compliance */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

@@ -25,21 +25,22 @@ app-transit-map {
   display: block;
 }
 
-/* Mobile Quick Floating Dock */
+/* Mobile Quick Apple Floating Dock */
 .mobile-hud-dock {
   display: none;
   position: absolute;
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 18;
-  background: rgba(8, 14, 26, 0.85);
+  z-index: 25;
+  background: var(--apple-glass);
   backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--border-panel);
-  border-radius: 24px;
-  padding: 4px 8px;
-  gap: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--apple-glass-border);
+  border-radius: var(--apple-radius-pill);
+  padding: 4px 6px;
+  gap: 6px;
+  box-shadow: var(--apple-glass-shadow);
 }
 
 .mobile-dock-btn {
@@ -48,19 +49,19 @@ app-transit-map {
   gap: 6px;
   background: transparent;
   border: 1px solid transparent;
-  color: var(--text-secondary);
-  padding: 6px 12px;
-  border-radius: 16px;
-  font-size: 11px;
-  font-weight: 700;
+  color: var(--apple-text-secondary);
+  padding: 6px 14px;
+  border-radius: var(--apple-radius-pill);
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.16s ease;
 }
 
 .mobile-dock-btn.active {
-  background: rgba(0, 242, 254, 0.15);
-  border-color: rgba(0, 242, 254, 0.35);
-  color: var(--cyan-primary);
+  background: var(--apple-blue);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(10, 132, 255, 0.35);
 }
 
 @media (max-width: 768px) {

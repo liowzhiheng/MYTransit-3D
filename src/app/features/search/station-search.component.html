@@ -1,7 +1,7 @@
 <div class="search-box-root">
-  <!-- Search Input Bar -->
+  <!-- Apple Spotlight Search Input Bar -->
   <div class="search-input-bar" [class.focused]="isOpen">
-    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="11" cy="11" r="8"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
     </svg>
@@ -9,29 +9,29 @@
     <input
       #searchInput
       type="text"
-      class="search-input font-mono"
+      class="search-input"
       [value]="query"
       (input)="onInput($event)"
       (keydown)="onKeydown($event)"
       (focus)="query.trim() && (isOpen = results.length > 0)"
-      placeholder="Search station or code (e.g. Pasar Seni, KG16)..."
+      placeholder="Search stations, lines, or codes..."
       aria-label="Search station or transit corridor"
       autocomplete="off"
       spellcheck="false"
     />
 
-    <button *ngIf="query" class="clear-btn font-mono" (click)="clearSearch()" title="Clear search">
+    <button *ngIf="query" class="clear-btn" (click)="clearSearch()" title="Clear search" aria-label="Clear search">
       ✕
     </button>
 
-    <span class="search-hint font-mono" (click)="focusSearch()" title="Press / or Ctrl+K to search">/</span>
+    <span class="search-hint font-mono" (click)="focusSearch()" title="Press / to search">/</span>
   </div>
 
-  <!-- Autocomplete Results Dropdown -->
+  <!-- Apple Spotlight Results Dropdown -->
   <div *ngIf="isOpen" class="search-dropdown">
-    <div class="dropdown-header font-mono">
-      <span>MATCHING STATIONS ({{ results.length }})</span>
-      <span class="nav-hint">Use ↑ ↓ to navigate, Enter to select</span>
+    <div class="dropdown-header">
+      <span>Matching Stations ({{ results.length }})</span>
+      <span class="nav-hint">↑ ↓ to navigate · Enter to select</span>
     </div>
 
     <ul class="results-list" role="listbox">
@@ -53,20 +53,20 @@
           <div class="mode-pills">
             <span
               *ngFor="let m of item.station.modes"
-              class="mode-pill font-mono"
+              class="mode-pill"
               [style.background]="getModeColor(m)"
             >
               {{ m }}
             </span>
           </div>
-          <span class="lines-text font-mono">{{ item.station.lines.join(', ') }}</span>
+          <span class="lines-text">{{ item.station.lines.join(', ') }}</span>
         </div>
       </li>
     </ul>
   </div>
 
   <!-- Empty Search Results -->
-  <div *ngIf="isOpen && results.length === 0 && query.trim()" class="search-dropdown empty-dropdown font-mono">
+  <div *ngIf="isOpen && results.length === 0 && query.trim()" class="search-dropdown empty-dropdown">
     <div class="empty-state-text">
       No stations found matching "<span class="query-highlight">{{ query }}</span>"
     </div>
