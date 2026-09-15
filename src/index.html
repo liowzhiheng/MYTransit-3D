@@ -13,6 +13,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    // Suppress benign map tile abortion errors logged by browser extension inspectors
+    (function() {
+      if (typeof window !== 'undefined' && window.console) {
+        var _origError = console.error;
+        console.error = function() {
+          var first = arguments[0];
+          if (
+            (typeof first === 'string' && (first.indexOf('AbortError') !== -1 || first.indexOf('signal is aborted') !== -1)) ||
+            (first && (first.name === 'AbortError' || (first.message && first.message.indexOf('aborted') !== -1)))
+          ) {
+            return;
+          }
+          _origError.apply(console, arguments);
+        };
+      }
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

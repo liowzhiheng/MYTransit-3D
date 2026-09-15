@@ -440,9 +440,9 @@ export class MapService {
           type: 'circle',
           source: 'transit-vehicles',
           paint: {
-            'circle-radius': 9,
-            'circle-color': '#10b981',
-            'circle-opacity': 0.35,
+            'circle-radius': 14,
+            'circle-color': ['coalesce', ['get', 'color'], '#10b981'],
+            'circle-opacity': 0.45,
             'circle-blur': 0.8
           }
         });
@@ -453,9 +453,9 @@ export class MapService {
           type: 'circle',
           source: 'transit-vehicles',
           paint: {
-            'circle-radius': 4.5,
-            'circle-color': '#10b981',
-            'circle-stroke-width': 1.5,
+            'circle-radius': 5.5,
+            'circle-color': ['coalesce', ['get', 'color'], '#10b981'],
+            'circle-stroke-width': 2,
             'circle-stroke-color': '#ffffff'
           }
         });
@@ -465,16 +465,16 @@ export class MapService {
           id: 'transit-vehicles-label',
           type: 'symbol',
           source: 'transit-vehicles',
-          minzoom: 12,
+          minzoom: 12.5,
           layout: {
-            'text-field': ['get', 'routeId'],
+            'text-field': ['get', 'id'],
             'text-font': ['Noto Sans Regular'],
             'text-size': 9.5,
-            'text-offset': [0, -1.2],
+            'text-offset': [0, -1.3],
             'text-anchor': 'bottom'
           },
           paint: {
-            'text-color': '#10b981',
+            'text-color': ['coalesce', ['get', 'color'], '#10b981'],
             'text-halo-color': '#060b13',
             'text-halo-width': 2
           }
@@ -491,13 +491,21 @@ export class MapService {
             this.activeVehiclePopup.remove();
           }
 
+          const lineColor = p?.['color'] || '#10b981';
           const html = `
-            <div style="background:#0a111e; color:#f8fafc; padding:8px 10px; border-radius:6px; font-family:monospace; font-size:11px; border:1px solid #10b981;">
-              <div style="font-weight:700; color:#10b981; margin-bottom:4px;">VEHICLE // LIVE GPS</div>
-              <div><strong>ID:</strong> ${p?.['id'] || '--'}</div>
-              <div><strong>ROUTE:</strong> ${p?.['routeId'] || '--'}</div>
-              <div><strong>SPEED:</strong> ${p?.['status'] || '--'}</div>
-              <div><strong>SOURCE:</strong> ${p?.['source'] || 'GTFS-RT'}</div>
+            <div style="background:#0a111e; color:#f8fafc; padding:10px 12px; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:11px; border:1px solid ${lineColor}; min-width:210px; box-shadow:0 8px 24px rgba(0,0,0,0.6);">
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:${lineColor};"></span>
+                <strong style="color:${lineColor}; font-size:12px;">${p?.['id'] || 'TRAIN'}</strong>
+                <span style="margin-left:auto; font-size:9px; color:#94a3b8; background:#1e293b; padding:1px 5px; border-radius:3px;">${p?.['mode'] || 'TRANSIT'}</span>
+              </div>
+              <div style="margin-bottom:3px;"><span style="color:#64748b;">LINE:</span> <strong>${p?.['lineName'] || p?.['routeId'] || '--'}</strong></div>
+              <div style="margin-bottom:3px;"><span style="color:#64748b;">DIRECTION:</span> ${p?.['direction'] || 'In Service'}</div>
+              <div style="margin-bottom:3px;"><span style="color:#64748b;">SPEED:</span> <span style="color:#38bdf8; font-weight:600;">${p?.['speed'] ? p['speed'] + ' km/h' : p?.['status'] || '--'}</span></div>
+              <div style="margin-bottom:3px;"><span style="color:#64748b;">HEADING:</span> ${p?.['bearing'] ? p['bearing'] + '°' : '--'}</div>
+              <div style="margin-top:6px; padding-top:4px; border-top:1px dashed rgba(255,255,255,0.1); font-size:9px; color:#94a3b8;">
+                SRC: ${p?.['source'] || 'GTFS Timetable'}
+              </div>
             </div>
           `;
 
@@ -527,16 +535,20 @@ export class MapService {
 
     const routeLayers = ['transit-routes-glow', 'transit-routes-casing', 'transit-routes-line'];
     const stationLayers = ['transit-stations-ring', 'transit-stations-circle', 'transit-stations-label'];
+    const vehicleLayers = ['transit-vehicles-glow', 'transit-vehicles-circle', 'transit-vehicles-label'];
 
     if (mode === 'ALL') {
       routeLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, null));
       stationLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, null));
+      vehicleLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, null));
     } else {
       const routeFilter: any = ['==', ['get', 'mode'], mode];
       const stationFilter: any = ['==', ['get', 'primaryMode'], mode];
+      const vehicleFilter: any = ['==', ['get', 'mode'], mode];
 
       routeLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, routeFilter));
       stationLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, stationFilter));
+      vehicleLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, vehicleFilter));
     }
   }
 
@@ -546,12 +558,15 @@ export class MapService {
   filterByLine(lineId: string | null): void {
     if (!this.map) return;
     const routeLayers = ['transit-routes-glow', 'transit-routes-casing', 'transit-routes-line'];
+    const vehicleLayers = ['transit-vehicles-glow', 'transit-vehicles-circle', 'transit-vehicles-label'];
 
     if (!lineId || lineId === 'ALL') {
       routeLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, null));
+      vehicleLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, null));
     } else {
       const filter: any = ['==', ['get', 'routeId'], lineId];
       routeLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, filter));
+      vehicleLayers.forEach(id => this.map?.getLayer(id) && this.map.setFilter(id, filter));
       this.fitRouteBounds(lineId);
     }
   }
@@ -584,6 +599,8 @@ export class MapService {
     if (found && isFinite(minLng) && isFinite(minLat)) {
       const containerWidth = this.map.getContainer()?.clientWidth || 1200;
       const padSide = containerWidth > 1100 ? 360 : 40;
+      // Stop previous momentum/flight to prevent concurrent animation conflicts
+      this.map.stop();
       this.map.fitBounds(
         [
           [minLng, minLat],
@@ -591,8 +608,8 @@ export class MapService {
         ],
         {
           padding: { top: 70, bottom: 60, left: padSide, right: padSide },
-          pitch: 48,
-          duration: 1200
+          pitch: 45,
+          duration: 800
         }
       );
     }

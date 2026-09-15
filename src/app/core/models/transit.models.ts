@@ -41,12 +41,19 @@ export interface TransitStation {
 export interface TransitVehicle {
   id: string;
   routeId?: string;
+  lineName?: string;
+  mode?: string;
+  color?: string;
   latitude: number;
   longitude: number;
   bearing?: number;
+  speed?: number;
   status?: string;
+  direction?: string;
   timestamp?: string;
   source: string;
+  isSimulated?: boolean;
+  headwayMinutes?: number;
 }
 
 export interface TransitAlert {

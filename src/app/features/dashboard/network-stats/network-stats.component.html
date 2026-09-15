@@ -23,7 +23,12 @@
         {{ vehiclesCount < 10 ? '0' + vehiclesCount : vehiclesCount }} <span class="stat-unit">LIVE</span>
       </span>
       <ng-template #scheduledVehicles>
-        <span class="stat-v font-mono text-muted">-- <span class="stat-unit">(SCHEDULED)</span></span>
+        <span *ngIf="vehiclesCount !== null && vehiclesCount > 0; else noVehicles" class="stat-v font-mono" style="color: #38bdf8;">
+          {{ vehiclesCount < 10 ? '0' + vehiclesCount : vehiclesCount }} <span class="stat-unit">ACTIVE (EST)</span>
+        </span>
+        <ng-template #noVehicles>
+          <span class="stat-v font-mono text-muted">-- <span class="stat-unit">(SCHEDULED)</span></span>
+        </ng-template>
       </ng-template>
     </div>
 
