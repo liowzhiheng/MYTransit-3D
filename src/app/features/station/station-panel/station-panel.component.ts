@@ -3,13 +3,10 @@ import {
   Component,
   EventEmitter,
   Input,
-  Output,
-  inject
+  Output
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TransitStation } from '../../../core/models/transit.models';
-import { MapService } from '../../../core/services/map.service';
-import { TransitDataService } from '../../../core/services/transit-data.service';
 
 export interface LineScheduleItem {
   lineName: string;
@@ -33,9 +30,6 @@ export class StationPanelComponent {
   @Input() isOpen = true;
   @Input() station: TransitStation | null = null;
   @Output() closePanel = new EventEmitter<void>();
-
-  private mapService = inject(MapService);
-  private transitData = inject(TransitDataService);
 
   getModeColor(mode: string): string {
     switch (mode) {
@@ -105,15 +99,5 @@ export class StationPanelComponent {
     if (l.includes('port klang')) return 'TP';
     if (l.includes('sunway') || l.includes('brt')) return 'BRT';
     return 'KV';
-  }
-
-  focusIn3D(): void {
-    if (!this.station) return;
-    this.mapService.flyTo([this.station.longitude, this.station.latitude], 16.8, 62, -20);
-  }
-
-  focusTopDown(): void {
-    if (!this.station) return;
-    this.mapService.flyTo([this.station.longitude, this.station.latitude], 16.0, 0, 0);
   }
 }

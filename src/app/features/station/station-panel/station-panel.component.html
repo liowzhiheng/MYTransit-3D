@@ -32,23 +32,6 @@
   </div>
 
   <div *ngIf="station; else emptyDetails" class="inspector-scrollable">
-    <!-- Spatial Action Buttons (Focus 3D & Top-Down) -->
-    <div class="actions-row">
-      <button class="action-pill-btn" (click)="focusIn3D()" title="Fly camera to 3D station perspective">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
-        </svg>
-        <span>Focus 3D</span>
-      </button>
-
-      <button class="action-pill-btn" (click)="focusTopDown()" title="Orthographic 2D top-down view">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-        </svg>
-        <span>Top-Down</span>
-      </button>
-    </div>
-
     <!-- Service Status Flat Row -->
     <div class="service-status-bar">
       <span class="pulse-dot"></span>

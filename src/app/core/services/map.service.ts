@@ -333,19 +333,6 @@ export class MapService {
           features: []
         }
       });
-
-      this.map.addLayer({
-        id: 'transit-station-selected-halo',
-        type: 'circle',
-        source: 'selected-station-source',
-        paint: {
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 10, 14, 16, 17, 22],
-          'circle-color': 'transparent',
-          'circle-stroke-width': 2.5,
-          'circle-stroke-color': '#00f2fe',
-          'circle-stroke-opacity': 0.9
-        }
-      });
     }
   }
 
