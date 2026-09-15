@@ -77,7 +77,10 @@ export class MapService {
   // Cached GeoJSON references for reload/style changes
   private cachedRoutesGeoJson: FeatureCollection | null = null;
   private cachedStationsGeoJson: FeatureCollection | null = null;
+  private cachedVehiclesGeoJson: FeatureCollection | null = null;
+  private cachedSelectedStation: TransitStation | null = null;
   private selectedStationCoords: [number, number] | null = null;
+  private hasInitializedLayers = false;
 
   readonly isMapLoaded$: Observable<boolean> = this.isMapLoadedSubject.asObservable();
   readonly is3D$: Observable<boolean> = this.is3DSubject.asObservable();
@@ -91,6 +94,7 @@ export class MapService {
       this.map = null;
     }
 
+    this.hasInitializedLayers = false;
     this.isMapLoadedSubject.next(false);
     this.errorSubject.next(null);
 
@@ -118,16 +122,18 @@ export class MapService {
           'bottom-right'
         );
 
-        let hasInitializedLayers = false;
         const onMapReady = () => {
-          if (hasInitializedLayers || !this.map) return;
-          hasInitializedLayers = true;
+          if (this.hasInitializedLayers || !this.map) return;
+          this.hasInitializedLayers = true;
           this.zone.run(() => {
+            this.isMapLoadedSubject.next(true);
             if (this.cachedRoutesGeoJson && this.cachedStationsGeoJson) {
               this.applyTransitLayers(this.cachedRoutesGeoJson, this.cachedStationsGeoJson);
             }
+            if (this.cachedVehiclesGeoJson) {
+              this.applyVehicles(this.cachedVehiclesGeoJson);
+            }
             this.setup3DBuildings();
-            this.isMapLoadedSubject.next(true);
             this.updateCameraState();
             setTimeout(() => this.resize(), 100);
           });
@@ -137,7 +143,7 @@ export class MapService {
 
         // Safety fallback: Ensure digital twin renders within 1.5s regardless of external tile latency
         setTimeout(() => {
-          if (!this.isMapLoadedSubject.value) {
+          if (!this.hasInitializedLayers && this.map) {
             console.info('[MapService] Activating transit layers via readiness timeout fallback');
             onMapReady();
           }
@@ -172,7 +178,7 @@ export class MapService {
     this.cachedRoutesGeoJson = routesGeoJson;
     this.cachedStationsGeoJson = stationsGeoJson;
 
-    if (this.map) {
+    if (this.map && (this.hasInitializedLayers || this.map.loaded())) {
       this.applyTransitLayers(routesGeoJson, stationsGeoJson);
     }
   }
@@ -182,13 +188,6 @@ export class MapService {
     stationsGeoJson: FeatureCollection
   ): void {
     if (!this.map) return;
-
-    if (!this.map.isStyleLoaded()) {
-      this.map.once('style.load', () => {
-        this.applyTransitLayers(routesGeoJson, stationsGeoJson);
-      });
-      return;
-    }
 
     try {
       // 1. Routes Source & Layers
@@ -307,6 +306,10 @@ export class MapService {
         this.setupStationInteractions();
       }
 
+      if (this.cachedSelectedStation) {
+        this.highlightStation(this.cachedSelectedStation);
+      }
+
       console.info(
         `[MapService] Mounted transit network: ${routesGeoJson.features?.length || 0} routes, ${stationsGeoJson.features?.length || 0} stations.`
       );
@@ -343,6 +346,7 @@ export class MapService {
   }
 
   highlightStation(station: TransitStation | null): void {
+    this.cachedSelectedStation = station;
     if (!this.map) return;
     const source = this.map.getSource('selected-station-source') as maplibregl.GeoJSONSource;
     if (!source) return;
@@ -407,12 +411,14 @@ export class MapService {
    * Render real-time vehicle positions on MapLibre
    */
   setVehicles(geoJson: FeatureCollection): void {
-    if (!this.map) return;
-
-    if (!this.map.isStyleLoaded()) {
-      this.map.once('style.load', () => this.setVehicles(geoJson));
-      return;
+    this.cachedVehiclesGeoJson = geoJson;
+    if (this.map && (this.hasInitializedLayers || this.map.loaded())) {
+      this.applyVehicles(geoJson);
     }
+  }
+
+  private applyVehicles(geoJson: FeatureCollection): void {
+    if (!this.map) return;
 
     try {
       const source = this.map.getSource('transit-vehicles') as maplibregl.GeoJSONSource;
@@ -572,13 +578,15 @@ export class MapService {
     }
 
     if (found && isFinite(minLng) && isFinite(minLat)) {
+      const containerWidth = this.map.getContainer()?.clientWidth || 1200;
+      const padSide = containerWidth > 1100 ? 360 : 40;
       this.map.fitBounds(
         [
           [minLng, minLat],
           [maxLng, maxLat]
         ],
         {
-          padding: { top: 70, bottom: 60, left: 360, right: 380 },
+          padding: { top: 70, bottom: 60, left: padSide, right: padSide },
           pitch: 48,
           duration: 1200
         }
