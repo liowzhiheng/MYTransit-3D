@@ -22,7 +22,7 @@
 
     <!-- Mode Filter Segmented Control -->
     <div class="filter-section" *ngIf="modeCounts$ | async as counts">
-      <div class="section-heading">Transit Modes</div>
+      <div class="section-label">Transit Modes</div>
       <div class="segmented-control">
         <button
           class="segment-pill"
@@ -80,32 +80,16 @@
       </div>
     </div>
 
-    <!-- Strategic Hubs Cards -->
-    <div class="hubs-section">
-      <div class="section-heading">Strategic Hubs</div>
-      <div class="hubs-grid">
-        <button
-          *ngFor="let hub of quickHubs"
-          class="hub-card-btn"
-          (click)="onHubClick(hub)"
-          title="Fly camera to {{ hub.name }}"
-        >
-          <span class="hub-name">{{ hub.name }}</span>
-          <span class="hub-desc">{{ hub.desc }}</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Transit Lines List -->
+    <!-- Transit Corridors Flat List -->
     <div class="lines-section" *ngIf="filteredRoutes$ | async as routes">
       <div class="lines-header-row">
-        <span class="section-heading">Transit Corridors ({{ routes.length }})</span>
+        <span class="section-label">Corridors ({{ routes.length }})</span>
         <button *ngIf="activeLineId$ | async" class="reset-pill-btn" (click)="clearLineFilter()" title="Clear corridor filter">
           Reset Filter
         </button>
       </div>
 
-      <!-- Active Corridor Isolation Card -->
+      <!-- Active Corridor Isolation Indicator -->
       <div *ngIf="selectedRoute$ | async as selectedRoute" class="active-isolation-card">
         <div class="isolation-top">
           <span class="isolation-badge" [style.background-color]="selectedRoute.color">Isolated</span>
@@ -116,26 +100,24 @@
         </p>
       </div>
 
-      <div class="lines-list">
+      <div class="lines-flat-list">
         <div
           *ngFor="let line of routes"
-          class="line-card-item"
+          class="line-row-item"
           [class.line-selected]="(activeLineId$ | async) === line.id"
           (click)="toggleLineFilter(line.id)"
           title="Filter map to {{ line.name }}"
         >
-          <div class="line-indicator-bar" [style.background-color]="line.color"></div>
-          <div class="line-card-content">
-            <div class="line-card-title-row">
-              <span class="line-badge font-mono" [style.background-color]="line.color" [style.color]="line.textColor || '#fff'">
-                {{ line.shortName || line.id }}
-              </span>
-              <span class="line-name-text">{{ line.name }}</span>
-            </div>
-            <div class="line-card-meta-row">
-              <span class="line-mode-tag">{{ line.mode }} Corridor</span>
-              <span class="line-operational-dot" title="Operational"></span>
-            </div>
+          <div class="line-row-left">
+            <span class="line-stripe" [style.background-color]="line.color"></span>
+            <span class="line-code-tag font-mono" [style.background-color]="line.color" [style.color]="line.textColor || '#fff'">
+              {{ line.shortName || line.id }}
+            </span>
+            <span class="line-name-text">{{ line.name }}</span>
+          </div>
+          <div class="line-row-right">
+            <span class="line-mode-badge">{{ line.mode }}</span>
+            <span class="line-operational-dot" title="Operational"></span>
           </div>
         </div>
       </div>

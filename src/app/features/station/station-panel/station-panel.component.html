@@ -32,7 +32,7 @@
   </div>
 
   <div *ngIf="station; else emptyDetails" class="inspector-scrollable">
-    <!-- Spatial Action Buttons -->
+    <!-- Spatial Action Buttons (Focus 3D & Top-Down) -->
     <div class="actions-row">
       <button class="action-pill-btn" (click)="focusIn3D()" title="Fly camera to 3D station perspective">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -47,81 +47,48 @@
         </svg>
         <span>Top-Down</span>
       </button>
-
-      <button class="action-pill-btn" (click)="shareStation()" title="Copy direct station link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="18" cy="5" r="3"></circle>
-          <circle cx="6" cy="12" r="3"></circle>
-          <circle cx="18" cy="19" r="3"></circle>
-          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-        </svg>
-        <span>Share</span>
-      </button>
     </div>
 
-    <!-- Notification Toast if copied -->
-    <div *ngIf="copyStatus()" class="toast-capsule font-mono">
-      <span class="status-indicator-dot"></span>
-      {{ copyStatus() }}
+    <!-- Service Status Flat Row -->
+    <div class="service-status-bar">
+      <span class="pulse-dot"></span>
+      <span class="status-main-label">{{ station.operationalStatus || 'Operational' }}</span>
+      <span class="status-bullet">·</span>
+      <span class="status-subtext">Published headways active</span>
     </div>
 
-    <!-- Service Status Card -->
-    <div class="inspector-card">
-      <div class="card-heading">Service Status</div>
-      <div class="service-status-row">
-        <div class="status-pill status-live">
-          <span class="pulse-dot"></span>
-          <span>{{ station.operationalStatus || 'Operational' }}</span>
-        </div>
-        <span class="status-secondary-text">Published headways active</span>
-      </div>
-    </div>
-
-    <!-- Scheduled Headways by Line -->
-    <div class="inspector-card">
-      <div class="card-heading-row">
-        <span class="card-heading">Scheduled Headways</span>
-        <span class="status-pill status-scheduled">Timetable</span>
+    <!-- Scheduled Headways Flat List -->
+    <div class="inspector-section">
+      <div class="section-title-row">
+        <span class="section-label">Scheduled Headways</span>
+        <span class="section-tag">Timetable</span>
       </div>
 
-      <div class="schedules-stack">
-        <div *ngFor="let item of getLineSchedules()" class="schedule-item-card">
-          <div class="schedule-color-bar" [style.background-color]="item.lineColor"></div>
-          <div class="schedule-body">
-            <div class="schedule-line-header">
-              <span class="schedule-line-badge font-mono" [style.background-color]="item.lineColor">
-                {{ item.lineCode }}
-              </span>
-              <span class="schedule-line-name">{{ item.lineName }}</span>
-            </div>
-            <div class="schedule-arrival-info">
-              <span class="arrival-pill">In {{ item.nextArrivalMinutes }} min</span>
-              <span class="frequency-subtext">Every ~{{ item.frequencyMinutes }} min</span>
-            </div>
+      <div class="headways-list">
+        <div *ngFor="let item of getLineSchedules()" class="headway-row">
+          <div class="headway-line-col">
+            <span class="headway-line-badge font-mono" [style.background-color]="item.lineColor">
+              {{ item.lineCode }}
+            </span>
+            <span class="headway-line-name">{{ item.lineName }}</span>
+          </div>
+          <div class="headway-time-col">
+            <span class="headway-arrival-pill">In {{ item.nextArrivalMinutes }} min</span>
+            <span class="headway-frequency-text">~{{ item.frequencyMinutes }}m freq</span>
           </div>
         </div>
       </div>
-      <p class="service-footnote">Derived from published Prasarana / KTMB timetable intervals.</p>
+      <p class="section-footnote">Derived from published Prasarana / KTMB timetable intervals.</p>
     </div>
 
-    <!-- Connecting Lines -->
-    <div class="inspector-card">
-      <div class="card-heading">Connecting Lines ({{ station.lines.length }})</div>
-      <div class="connecting-lines-list">
-        <div *ngFor="let line of station.lines" class="connecting-line-tag">
-          <span class="tag-color-bullet" [style.background-color]="getLineColor(line)"></span>
-          <span class="tag-line-name">{{ line }}</span>
+    <!-- Connecting Lines Flat List -->
+    <div class="inspector-section">
+      <div class="section-label">Connecting Lines ({{ station.lines.length }})</div>
+      <div class="connections-list">
+        <div *ngFor="let line of station.lines" class="connection-row">
+          <span class="connection-dot" [style.background-color]="getLineColor(line)"></span>
+          <span class="connection-name">{{ line }}</span>
         </div>
-      </div>
-    </div>
-
-    <!-- Data Provenance -->
-    <div class="provenance-section">
-      <span class="provenance-label">Data Provenance</span>
-      <div class="provenance-notes">
-        <p>• GTFS Static & Timetable Datasets (Prasarana & KTMB)</p>
-        <p>• Open Data Portal: data.gov.my</p>
       </div>
     </div>
   </div>
@@ -135,31 +102,7 @@
         </svg>
       </div>
       <h3 class="empty-heading">Select a Station</h3>
-      <p class="empty-description">Search for a station or select any node on the 3D map canvas to examine lines, headways, and interchange connections.</p>
-
-      <div class="interchange-shortcuts">
-        <span class="shortcuts-label">Major Interchanges</span>
-        <div class="shortcuts-grid">
-          <button class="shortcut-pill" (click)="selectQuickStation('KL Sentral')">
-            <span class="shortcut-dot ktm"></span>KL Sentral
-          </button>
-          <button class="shortcut-pill" (click)="selectQuickStation('Pasar Seni')">
-            <span class="shortcut-dot lrt"></span>Pasar Seni
-          </button>
-          <button class="shortcut-pill" (click)="selectQuickStation('Bukit Bintang')">
-            <span class="shortcut-dot mrt"></span>Bukit Bintang
-          </button>
-          <button class="shortcut-pill" (click)="selectQuickStation('Masjid Jamek')">
-            <span class="shortcut-dot lrt"></span>Masjid Jamek
-          </button>
-          <button class="shortcut-pill" (click)="selectQuickStation('Merdeka')">
-            <span class="shortcut-dot mrt"></span>Merdeka
-          </button>
-          <button class="shortcut-pill" (click)="selectQuickStation('TRX')">
-            <span class="shortcut-dot mrt"></span>TRX
-          </button>
-        </div>
-      </div>
+      <p class="empty-description">Search or select any station on the 3D map canvas to examine lines, headways, and interchange connections.</p>
     </div>
   </ng-template>
 </aside>

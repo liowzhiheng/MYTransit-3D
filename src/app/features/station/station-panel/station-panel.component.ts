@@ -4,8 +4,7 @@ import {
   EventEmitter,
   Input,
   Output,
-  inject,
-  signal
+  inject
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TransitStation } from '../../../core/models/transit.models';
@@ -37,8 +36,6 @@ export class StationPanelComponent {
 
   private mapService = inject(MapService);
   private transitData = inject(TransitDataService);
-
-  copyStatus = signal<string | null>(null);
 
   getModeColor(mode: string): string {
     switch (mode) {
@@ -118,32 +115,5 @@ export class StationPanelComponent {
   focusTopDown(): void {
     if (!this.station) return;
     this.mapService.flyTo([this.station.longitude, this.station.latitude], 16.0, 0, 0);
-  }
-
-  copyCoordinates(): void {
-    if (!this.station) return;
-    const text = `${this.station.latitude.toFixed(6)}, ${this.station.longitude.toFixed(6)}`;
-    navigator.clipboard?.writeText(text).then(() => {
-      this.copyStatus.set('COORDINATES COPIED');
-      setTimeout(() => this.copyStatus.set(null), 2500);
-    }).catch(() => {});
-  }
-
-  shareStation(): void {
-    if (!this.station) return;
-    const url = `${window.location.origin}${window.location.pathname}#/station/${this.station.id}`;
-    navigator.clipboard?.writeText(url).then(() => {
-      this.copyStatus.set('DIRECT LINK COPIED');
-      setTimeout(() => this.copyStatus.set(null), 2500);
-    }).catch(() => {});
-  }
-
-  selectQuickStation(query: string): void {
-    const stations = this.transitData.getStations();
-    const match = stations.find(s => s.name.toLowerCase().includes(query.toLowerCase()));
-    if (match) {
-      this.transitData.selectStation(match);
-      this.mapService.flyTo([match.longitude, match.latitude], 16.2, 58, -15);
-    }
   }
 }

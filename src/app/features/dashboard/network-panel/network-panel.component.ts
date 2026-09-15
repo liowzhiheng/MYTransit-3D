@@ -67,14 +67,6 @@ export class NetworkPanelComponent {
     })
   );
 
-  readonly quickHubs: Array<{ name: string; coords: [number, number]; desc: string; stationId?: string }> = [
-    { name: 'KL Sentral', coords: [101.6865, 3.1343], desc: 'National Transit Hub', stationId: 'stn_kl-sentral' },
-    { name: 'Pasar Seni', coords: [101.6961, 3.1424], desc: 'MRT / LRT Interchange', stationId: 'stn_pasar-seni' },
-    { name: 'Bukit Bintang', coords: [101.7118, 3.1466], desc: 'Commercial Core', stationId: 'stn_bukit-bintang' },
-    { name: 'Merdeka 118', coords: [101.7011, 3.1418], desc: 'Mega Landmark & MRT', stationId: 'stn_merdeka' },
-    { name: 'TRX Interchange', coords: [101.7196, 3.1432], desc: 'Financial District', stationId: 'stn_tun-razak-exchange' }
-  ];
-
   setModeFilter(mode: string): void {
     this.transitData.setModeFilter(mode);
   }
@@ -90,13 +82,6 @@ export class NetworkPanelComponent {
 
   clearLineFilter(): void {
     this.transitData.setLineFilter(null);
-  }
-
-  onHubClick(hub: { name: string; coords: [number, number]; desc: string; stationId?: string }): void {
-    this.mapService.flyTo(hub.coords, 15.5, 55, -20);
-    if (hub.stationId) {
-      this.transitData.selectStationById(hub.stationId);
-    }
   }
 
   onStationSelected(station: TransitStation): void {
