@@ -112,6 +112,10 @@ export class MapService {
         });
 
         this.map = mapInstance;
+        if (typeof window !== 'undefined') {
+          (window as any).__map = mapInstance;
+          (window as any).__mapService = this;
+        }
 
         mapInstance.addControl(
           new maplibregl.AttributionControl({
