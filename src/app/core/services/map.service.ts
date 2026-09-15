@@ -528,6 +528,78 @@ export class MapService {
   }
 
   /**
+   * Render or update user's live position marker with radar ripple glow
+   */
+  setUserLocation(coords: [number, number], accuracyMeters?: number): void {
+    if (!this.map) return;
+
+    const geojson: FeatureCollection = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: coords
+          },
+          properties: {
+            accuracy: accuracyMeters || 20
+          }
+        }
+      ]
+    };
+
+    try {
+      const source = this.map.getSource('user-location') as maplibregl.GeoJSONSource;
+      if (source) {
+        source.setData(geojson);
+      } else {
+        this.map.addSource('user-location', {
+          type: 'geojson',
+          data: geojson
+        });
+
+        // Pulsating outer aura
+        this.map.addLayer({
+          id: 'user-location-glow',
+          type: 'circle',
+          source: 'user-location',
+          paint: {
+            'circle-radius': 22,
+            'circle-color': '#0284c7',
+            'circle-opacity': 0.35,
+            'circle-blur': 0.8
+          }
+        });
+
+        // Core cyan location dot
+        this.map.addLayer({
+          id: 'user-location-dot',
+          type: 'circle',
+          source: 'user-location',
+          paint: {
+            'circle-radius': 7,
+            'circle-color': '#38bdf8',
+            'circle-stroke-width': 2.5,
+            'circle-stroke-color': '#ffffff'
+          }
+        });
+      }
+    } catch (err) {
+      console.warn('[MapService] Error setting user location:', err);
+    }
+  }
+
+  clearUserLocation(): void {
+    if (!this.map) return;
+    try {
+      if (this.map.getLayer('user-location-dot')) this.map.removeLayer('user-location-dot');
+      if (this.map.getLayer('user-location-glow')) this.map.removeLayer('user-location-glow');
+      if (this.map.getSource('user-location')) this.map.removeSource('user-location');
+    } catch {}
+  }
+
+  /**
    * Filter transit layers by Mode (MRT, LRT, MONORAIL, KTM, BUS, or ALL)
    */
   filterByMode(mode: string): void {
