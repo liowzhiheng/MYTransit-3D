@@ -8,7 +8,6 @@
   <!-- Operations Center Top Nav -->
   <app-header
     (toggleLeftPanel)="toggleLeftPanel()"
-    (toggleRightPanel)="toggleRightPanel()"
     (openDataSources)="isDataSourceModalOpen.set(true)"
   ></app-header>
 
@@ -17,7 +16,7 @@
     <!-- Mobile Drawer Dimmer Backdrop (Tapping closes open sidebars on mobile) -->
     <div
       class="mobile-drawer-backdrop"
-      [class.active]="isLeftPanelOpen() || isRightPanelOpen()"
+      [class.active]="isLeftPanelOpen()"
       (click)="onBackdropClick()"
       aria-label="Dismiss sidebar overlay"
     ></div>
@@ -29,14 +28,7 @@
     ></app-network-panel>
 
     <!-- Center 3D Map Viewport -->
-    <app-transit-map [isRightPanelOpen]="isRightPanelOpen()"></app-transit-map>
-
-    <!-- Right Drawer: Station & Telemetry Inspector -->
-    <app-station-panel
-      [isOpen]="isRightPanelOpen()"
-      [station]="selectedStation$ | async"
-      (closePanel)="toggleRightPanel()"
-    ></app-station-panel>
+    <app-transit-map></app-transit-map>
 
     <!-- Mobile Quick Apple Floating Strip -->
     <div class="mobile-hud-dock">
@@ -51,19 +43,6 @@
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
         <span>Network</span>
-      </button>
-
-      <button
-        class="mobile-dock-btn"
-        [class.active]="isRightPanelOpen()"
-        (click)="toggleRightPanel()"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-        <span>Inspector</span>
       </button>
     </div>
   </main>

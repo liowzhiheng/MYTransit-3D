@@ -26,7 +26,6 @@ import { Subscription, combineLatest } from 'rxjs';
 })
 export class TransitMapComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef<HTMLDivElement>;
-  @Input() isRightPanelOpen = true;
 
   public mapService = inject(MapService);
   public transitData = inject(TransitDataService);

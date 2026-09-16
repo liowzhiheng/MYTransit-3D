@@ -118,21 +118,13 @@
   border-radius: 16px;
   padding: 5px;
   box-shadow: var(--apple-glass-shadow);
-  transition: right 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
-}
-
-.apple-map-controls.offset-panel {
-  right: calc(var(--station-panel-width) + 32px);
 }
 
 @media (max-width: 768px) {
   .apple-map-controls {
     top: auto;
     bottom: 24px;
-    right: 14px;
-  }
-  .apple-map-controls.offset-panel {
     right: 14px;
   }
 }

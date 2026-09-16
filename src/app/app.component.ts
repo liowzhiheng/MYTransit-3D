@@ -9,7 +9,6 @@ import {
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './features/dashboard/header/header.component';
 import { NetworkPanelComponent } from './features/dashboard/network-panel/network-panel.component';
-import { StationPanelComponent } from './features/station/station-panel/station-panel.component';
 import { NetworkStatsComponent } from './features/dashboard/network-stats/network-stats.component';
 import { DataSourceModalComponent } from './features/dashboard/data-source-modal/data-source-modal.component';
 import { TransitMapComponent } from './features/map/transit-map.component';
@@ -27,7 +26,6 @@ import { map } from 'rxjs/operators';
     CommonModule,
     HeaderComponent,
     NetworkPanelComponent,
-    StationPanelComponent,
     NetworkStatsComponent,
     DataSourceModalComponent,
     TransitMapComponent
@@ -42,12 +40,10 @@ export class AppComponent implements OnInit, OnDestroy {
   public realtimeData = inject(RealtimeDataService);
 
   isLeftPanelOpen = signal<boolean>(typeof window !== 'undefined' && window.innerWidth < 768 ? false : true);
-  isRightPanelOpen = signal<boolean>(typeof window !== 'undefined' && window.innerWidth < 768 ? false : true);
   isDataSourceModalOpen = signal<boolean>(false);
 
   onBackdropClick(): void {
     this.isLeftPanelOpen.set(false);
-    this.isRightPanelOpen.set(false);
   }
 
   readonly selectedStation$ = this.transitData.selectedStation$;
@@ -82,22 +78,20 @@ export class AppComponent implements OnInit, OnDestroy {
         const found = this.transitData.selectStationById(stationId);
         if (found) {
           this.mapService.flyTo([found.longitude, found.latitude], 16.2, 58, -15);
-          this.isRightPanelOpen.set(true);
         }
       }
     }
   }
 
   onStationSelected(station: TransitStation): void {
-    this.isRightPanelOpen.set(true);
+    this.mapService.flyTo([station.longitude, station.latitude], 16.5, 55, -20);
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      this.isLeftPanelOpen.set(false);
+    }
   }
 
   toggleLeftPanel(): void {
     this.isLeftPanelOpen.update(v => !v);
-  }
-
-  toggleRightPanel(): void {
-    this.isRightPanelOpen.update(v => !v);
   }
 
   ngOnDestroy(): void {

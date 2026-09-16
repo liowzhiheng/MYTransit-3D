@@ -12,7 +12,6 @@ import { RealtimeDataService } from '../../../core/services/realtime-data.servic
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   @Output() toggleLeftPanel = new EventEmitter<void>();
-  @Output() toggleRightPanel = new EventEmitter<void>();
   @Output() openDataSources = new EventEmitter<void>();
 
   public realtimeData = inject(RealtimeDataService);
